@@ -1,2 +1,10 @@
 {% extends 'base.html.twig' %}
 
+{% block body %}
+    <div class="searchBar">
+        {{ form_start(form, {'attr': {'class': 'searchForm'}}) }}
+        {{ form_widget(form.query, {'attr': {'class': 'searchInput'}}) }}
+        {{ form_widget(form.submit, {'attr': {'class': 'searchButton'}}) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
