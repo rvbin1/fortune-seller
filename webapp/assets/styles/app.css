@@ -1,4 +1,5 @@
 @import url("header/header.css");
+@import url("body/searchBar.css");
 
 body{
     height: 100vh;
