@@ -1,5 +1,6 @@
 @import url("header/header.css");
 @import url("body/searchBar.css");
+@import url("body/checkbox.css");
 
 body{
     height: 100vh;

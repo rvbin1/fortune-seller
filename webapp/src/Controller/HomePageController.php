@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\CheckboxFormType;
 use App\Form\SearchFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,15 +14,23 @@ final class HomePageController extends AbstractController
     #[Route('/', name: 'app_home_page')]
     public function index(Request $request): Response
     {
-        $form = $this->createForm(SearchFormType::class);
-        $form->handleRequest($request);
+        $searchForm = $this->createForm(SearchFormType::class);
+        $searchForm->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $data = $form->getData();
+        $checkBoxForm = $this->createForm(CheckboxFormType::class);
+        $checkBoxForm->handleRequest($request);
+
+        if ($searchForm->isSubmitted() && $searchForm->isValid()) {
+            $searchFormData = $searchForm->getData();
+        }
+
+        if ($checkBoxForm->isSubmitted() && $checkBoxForm->isValid()) {
+            $checkBoxData = $checkBoxForm->getData();
         }
 
         return $this->render('home_page/index.html.twig', [
-            'form' => $form->createView(),
+            'searchForm' => $searchForm->createView(),
+            'checkBoxForm' => $checkBoxForm->createView(),
         ]);
     }
 }
