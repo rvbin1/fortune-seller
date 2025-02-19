@@ -1,0 +1,17 @@
+{% block body %}
+    <div class="checkbox">
+        {{ form_start(checkBoxForm) }}
+        <div class="checkbox-container">
+            <div class="checkbox-item">
+                {{ form_row(checkBoxForm.crafting) }}
+            </div>
+            <div class="checkbox-item">
+                {{ form_row(checkBoxForm.selling) }}
+            </div>
+            <div class="checkbox-item">
+                {{ form_row(checkBoxForm.converting) }}
+            </div>
+        </div>
+        {{ form_end(checkBoxForm) }}
+    </div>
+{% endblock %}

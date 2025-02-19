@@ -1,0 +1,8 @@
+{% block body %}
+    <div class="searchBar">
+        {{ form_start(searchForm, {'attr': {'class': 'searchForm'}}) }}
+        {{ form_widget(searchForm.query, {'attr': {'class': 'searchInput'}}) }}
+        {{ form_widget(searchForm.submit, {'attr': {'class': 'searchButton'}}) }}
+        {{ form_end(searchForm) }}
+    </div>
+{% endblock %}
