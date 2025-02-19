@@ -30,6 +30,9 @@ class Item
     #[ORM\OneToMany(targetEntity: Recipes::class, mappedBy: 'outputItem')]
     private Collection $recipes;
 
+    #[ORM\Column]
+    private ?bool $sellable = null;
+
     public function __construct()
     {
         $this->recipes = new ArrayCollection();
@@ -97,6 +100,18 @@ class Item
                 $recipe->setOutputItem(null);
             }
         }
+        return $this;
+    }
+
+    public function isSellable(): ?bool
+    {
+        return $this->sellable;
+    }
+
+    public function setSellable(bool $sellable): static
+    {
+        $this->sellable = $sellable;
+
         return $this;
     }
 }
