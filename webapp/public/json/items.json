@@ -1,0 +1,3002 @@
+[
+    {
+        "gw2id": 4,
+        "name": "Assassin Transform Weapon",
+        "pic_url": "https://render.guildwars2.com/file/562B6309B40701CE654E9E0C4C56C857B4A4022D/60983.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 6,
+        "name": "((208738))",
+        "pic_url": "https://render.guildwars2.com/file/CC2E01E0F566A6EEF4F2EC2B19AA7A3E1FEFB1B4/60984.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 15,
+        "name": "Abomination Hammer",
+        "pic_url": "https://render.guildwars2.com/file/E8507FFB6CF3C9094A69956344CEDBD9B47D95B6/434872.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 24,
+        "name": "Sealed Package of Snowballs",
+        "pic_url": "https://render.guildwars2.com/file/1D05D1EE04E16E69710E1EAB11AC466BBF105778/219347.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 33,
+        "name": "PvP Heavy Helm of the Warrior",
+        "pic_url": "https://render.guildwars2.com/file/71056970CA589BC04FF6CBB72F461908E3283F01/61103.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 46,
+        "name": "Gladiator Weapon",
+        "pic_url": "https://render.guildwars2.com/file/4AECE5EA59CA057F4C53E1EDFE95E0E3E61DE37F/60980.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 56,
+        "name": "Strong Back Brace",
+        "pic_url": "https://render.guildwars2.com/file/03B65C435B15EB2C10E04F3454B03718AAF3AE90/61004.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 57,
+        "name": "Hearty Back Brace",
+        "pic_url": "https://render.guildwars2.com/file/03B65C435B15EB2C10E04F3454B03718AAF3AE90/61004.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 58,
+        "name": "Enduring Back Brace",
+        "pic_url": "https://render.guildwars2.com/file/03B65C435B15EB2C10E04F3454B03718AAF3AE90/61004.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 59,
+        "name": "Berserkers Spineguard of Ruby",
+        "pic_url": "https://render.guildwars2.com/file/03B65C435B15EB2C10E04F3454B03718AAF3AE90/61004.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 60,
+        "name": "Clerics Spineguard of Sapphire",
+        "pic_url": "https://render.guildwars2.com/file/03B65C435B15EB2C10E04F3454B03718AAF3AE90/61004.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 61,
+        "name": "Rampagers Spineguard of Coral",
+        "pic_url": "https://render.guildwars2.com/file/03B65C435B15EB2C10E04F3454B03718AAF3AE90/61004.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 62,
+        "name": "Shirt",
+        "pic_url": "https://render.guildwars2.com/file/A146C05DE3F7D9067204BD7EC80F5906B4212AE1/66608.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 63,
+        "name": "Leggings",
+        "pic_url": "https://render.guildwars2.com/file/4627D7B2CBEEFF32E37F7241DFC8A61CB7C5EC1E/66611.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 64,
+        "name": "Boots",
+        "pic_url": "https://render.guildwars2.com/file/3E521824FA0218F33BEBD6006F3993F3249C7646/66648.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 65,
+        "name": "Shirt",
+        "pic_url": "https://render.guildwars2.com/file/A146C05DE3F7D9067204BD7EC80F5906B4212AE1/66608.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 68,
+        "name": "Mighty Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 69,
+        "name": "Mighty Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 70,
+        "name": "Mighty Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 71,
+        "name": "Mighty Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 72,
+        "name": "Berserker's Sneakthief Mask of the Afflicted",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 73,
+        "name": "Berserker's Sneakthief Mask of Dwayna",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 74,
+        "name": "Mighty Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 75,
+        "name": "Berserker's Sneakthief Mask of Strength",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 76,
+        "name": "Berserker's Seer Coat of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 77,
+        "name": "Mighty Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 78,
+        "name": "Strong Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 79,
+        "name": "Berserker's Seer Coat of the Traveler",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 80,
+        "name": "Nika's Mask",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 81,
+        "name": "Mighty Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 82,
+        "name": "Berserker's Seer Coat of the Afflicted",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 83,
+        "name": "Strong Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 84,
+        "name": "Zhed's Coat",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 85,
+        "name": "Carrion Seer Coat of Rage",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 86,
+        "name": "Carrion Sneakthief Mask of Grenth",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 87,
+        "name": "Strong Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 88,
+        "name": "Carrion Seer Coat of the Centaur",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 89,
+        "name": "Carrion Sneakthief Mask of Balthazar",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 90,
+        "name": "Berserker's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 91,
+        "name": "Carrion Seer Coat of the Afflicted",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 92,
+        "name": "Carrion Sneakthief Mask of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 93,
+        "name": "Shiro's Mask",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 94,
+        "name": "Ogden's Coat",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 95,
+        "name": "Berserker's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 96,
+        "name": "Rampager's Sneakthief Mask of the Citadel",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 97,
+        "name": "Rampager's Seer Coat of the Traveler",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 98,
+        "name": "Berserker's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 99,
+        "name": "Mighty Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 100,
+        "name": "Rampager's Seer Coat of Divinity",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 101,
+        "name": "Rampager's Sneakthief Mask of the Traveler",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 102,
+        "name": "Berserker's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 103,
+        "name": "Aidan's Mask",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 104,
+        "name": "Norgu's Coat",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 105,
+        "name": "Shaman's Seer Coat of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 106,
+        "name": "Berserker's Sneakthief Coat of the Dolyak",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 107,
+        "name": "Shaman's Sneakthief Mask of the Grove",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 108,
+        "name": "Shaman's Seer Coat of Divinity",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 109,
+        "name": "Shaman's Sneakthief Mask of Melandru",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 110,
+        "name": "Berserker's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 111,
+        "name": "Tahlkora's Coat",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 112,
+        "name": "Berserker's Sneakthief Coat of the Centaur",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 113,
+        "name": "Cleric's Seer Coat of the Eagle",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 114,
+        "name": "Mighty Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 115,
+        "name": "Reyna's Mask",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 116,
+        "name": "Cleric's Sneakthief Mask of the Pack",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 117,
+        "name": "Cleric's Seer Coat of the Afflicted",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 118,
+        "name": "Mhenlo's Coat",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 119,
+        "name": "Berserker's Sneakthief Coat of Vampirism",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 120,
+        "name": "Strong Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 121,
+        "name": "Cleric's Sneakthief Mask of Rage",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 122,
+        "name": "Seer Coat of Rage",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 123,
+        "name": "Zho's Mask",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 125,
+        "name": "Nika's Coat",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 126,
+        "name": "Strong Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 128,
+        "name": "Berserker's Seer Coat of Rata Sum",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 129,
+        "name": "Strong Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 130,
+        "name": "Errol's Mask",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 131,
+        "name": "Khilbron's Coat",
+        "pic_url": "https://render.guildwars2.com/file/FB0AA64F98303AE5112408EF3DC8C7307EA118F8/61011.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 132,
+        "name": "Mighty Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 133,
+        "name": "Berserker's Sneakthief Mask of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 134,
+        "name": "Strong Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 135,
+        "name": "Mighty Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 136,
+        "name": "Vatlaaw's Mask",
+        "pic_url": "https://render.guildwars2.com/file/65A0C7367206E6CE4EC7C8CBE07EABAE0191BFBA/561548.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 137,
+        "name": "Mighty Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 138,
+        "name": "Mighty Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 139,
+        "name": "Carrion Sneakthief Coat of Mercy",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 140,
+        "name": "Strong Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 141,
+        "name": "Mighty Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 142,
+        "name": "Precise Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 143,
+        "name": "Carrion Sneakthief Coat of the Dolyak",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 144,
+        "name": "Precise Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 145,
+        "name": "Precise Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 146,
+        "name": "Precise Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 147,
+        "name": "Precise Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 148,
+        "name": "Mighty Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 149,
+        "name": "Vital Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 150,
+        "name": "Vital Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 151,
+        "name": "Carrion Sneakthief Coat of Hoelbrak",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 152,
+        "name": "Precise Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 153,
+        "name": "Vital Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 154,
+        "name": "Vital Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 155,
+        "name": "Shiro's Coat",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 156,
+        "name": "Vital Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 157,
+        "name": "Malign Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 158,
+        "name": "Precise Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 159,
+        "name": "Malign Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 160,
+        "name": "Malign Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 161,
+        "name": "Malign Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 162,
+        "name": "Berserker's Sneakthief Sandals of the Dolyak",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 163,
+        "name": "Malign Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 164,
+        "name": "Precise Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 165,
+        "name": "Strong Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 166,
+        "name": "Strong Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 167,
+        "name": "Ravaging Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 168,
+        "name": "Rampager's Sneakthief Coat of the Pack",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 169,
+        "name": "Strong Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 170,
+        "name": "Strong Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 171,
+        "name": "Berserker's Sneakthief Sandals of Dwayna",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 172,
+        "name": "Strong Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 173,
+        "name": "Strong Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 174,
+        "name": "Strong Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 175,
+        "name": "Ravaging Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 176,
+        "name": "Strong Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 177,
+        "name": "Ravaging Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 178,
+        "name": "Rampager's Sneakthief Coat of Vampirism",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 179,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 180,
+        "name": "Ravaging Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 181,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 182,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 183,
+        "name": "Aidan's Coat",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 184,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 185,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 186,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 187,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 188,
+        "name": "Berserker's Sneakthief Sandals of the Citadel",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 189,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 190,
+        "name": "Honed Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 191,
+        "name": "Shaman's Sneakthief Coat of the Centaur",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 192,
+        "name": "Honed Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 193,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 194,
+        "name": "Honed Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 195,
+        "name": "Honed Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 196,
+        "name": "Shaman's Sneakthief Coat of the Centaur",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 197,
+        "name": "Honed Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 198,
+        "name": "Honed Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 199,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 200,
+        "name": "Honed Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 201,
+        "name": "Honed Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 202,
+        "name": "Ravaging Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 203,
+        "name": "Reyna's Coat",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 204,
+        "name": "Ravaging Country Coat",
+        "pic_url": "https://render.guildwars2.com/file/F03808FFE89B40044671EED2E427053B389BE0A1/61007.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 205,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 206,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 207,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 208,
+        "name": "Nika's Boots",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 209,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 210,
+        "name": "Cleric's Sneakthief Coat of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 211,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 212,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 213,
+        "name": "Strong Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 214,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 215,
+        "name": "Carrion Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 216,
+        "name": "Cleric's Sneakthief Coat of Vampirism",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 217,
+        "name": "Strong Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 218,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 219,
+        "name": "Strong Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 220,
+        "name": "Strong Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 221,
+        "name": "Strong Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 222,
+        "name": "Carrion Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 223,
+        "name": "Zho's Coat",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 224,
+        "name": "Strong Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 225,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 226,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 227,
+        "name": "Carrion Sneakthief Sandals of the Traveler",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 228,
+        "name": "Strong Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 229,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 230,
+        "name": "Carrion Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 231,
+        "name": "Strong Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 232,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 233,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 234,
+        "name": "Honed Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 235,
+        "name": "Sneakthief Coat of Balthazar",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 236,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 237,
+        "name": "Carrion Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 238,
+        "name": "Errol's Coat",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 239,
+        "name": "Honed Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 240,
+        "name": "Carrion Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 241,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 242,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 243,
+        "name": "Honed Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 244,
+        "name": "Honed Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 245,
+        "name": "Carrion Sneakthief Sandals of the Traveler",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 246,
+        "name": "Honed Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 247,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 248,
+        "name": "Berserker's Sneakthief Coat of Balthazar",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 249,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 250,
+        "name": "Honed Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 251,
+        "name": "Vatlaaw's Coat",
+        "pic_url": "https://render.guildwars2.com/file/142DBA7E1144E3A61A02D9C8EC44225F327597F2/561549.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 252,
+        "name": "Vital Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 253,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 254,
+        "name": "Honed Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 255,
+        "name": "Carrion Sneakthief Sandals of the Pack",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 256,
+        "name": "Vital Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 257,
+        "name": "Ravaging Magician Coat",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 258,
+        "name": "Honed Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 259,
+        "name": "Berserker's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 260,
+        "name": "Mighty Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 261,
+        "name": "Berserker's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 262,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 263,
+        "name": "Mighty Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 264,
+        "name": "Vital Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 265,
+        "name": "Berserker's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 266,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 267,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 268,
+        "name": "Berserker's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 269,
+        "name": "Berserker's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 270,
+        "name": "Mighty Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 271,
+        "name": "Ravaging Swindler Mask",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 272,
+        "name": "Honed Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 273,
+        "name": "Carrion Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 274,
+        "name": "Shiro's Greaves",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 275,
+        "name": "Honed Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 276,
+        "name": "Berserker's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 277,
+        "name": "Carrion Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 278,
+        "name": "Berserker's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 279,
+        "name": "Carrion Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 280,
+        "name": "Precise Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 281,
+        "name": "Carrion Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 282,
+        "name": "Berserker's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 283,
+        "name": "Honed Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 284,
+        "name": "Berserker's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 285,
+        "name": "Carrion Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 286,
+        "name": "Precise Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 287,
+        "name": "Rampager's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 288,
+        "name": "Honed Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 289,
+        "name": "Berserker's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 290,
+        "name": "Rampager's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 291,
+        "name": "Carrion Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 292,
+        "name": "Honed Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 293,
+        "name": "Precise Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 294,
+        "name": "Carrion Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 295,
+        "name": "Rampager's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 296,
+        "name": "Honed Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 297,
+        "name": "Rampager's Sneakthief Sandals of the Centaur",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 298,
+        "name": "Rampager's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 299,
+        "name": "Carrion Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 300,
+        "name": "Vital Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 301,
+        "name": "Rampager's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 302,
+        "name": "Honed Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 303,
+        "name": "Carrion Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 304,
+        "name": "Vital Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 305,
+        "name": "Shaman's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 306,
+        "name": "Shaman's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 307,
+        "name": "Carrion Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 308,
+        "name": "Honed Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 309,
+        "name": "Rampager's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 310,
+        "name": "Vital Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 311,
+        "name": "Shaman's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 312,
+        "name": "Rampager's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 313,
+        "name": "Shaman's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 314,
+        "name": "Rampager's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 315,
+        "name": "Rampager's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 316,
+        "name": "Rampager's Sneakthief Sandals of Vampirism",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 317,
+        "name": "Shaman's Cabalist Coat",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 318,
+        "name": "Malign Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 319,
+        "name": "Rampager's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 320,
+        "name": "Rampager's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 321,
+        "name": "Rampager's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 322,
+        "name": "Shaman's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 323,
+        "name": "Aidan's Boots",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 324,
+        "name": "Malign Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 325,
+        "name": "Rampager's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 326,
+        "name": "Shaman's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 327,
+        "name": "Shaman's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 328,
+        "name": "Rampager's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 329,
+        "name": "Shaman's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 330,
+        "name": "Malign Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 331,
+        "name": "Shaman's Privateer Hat",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 332,
+        "name": "Rampager's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 333,
+        "name": "Strong Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 334,
+        "name": "Shaman's Sneakthief Sandals of the Traveler",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 335,
+        "name": "Mighty Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 336,
+        "name": "Shaman's Sneakthief Sandals of the Flock",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 337,
+        "name": "Strong Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 338,
+        "name": "Malign Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 339,
+        "name": "Strong Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 340,
+        "name": "Malign Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 341,
+        "name": "Malign Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 342,
+        "name": "Reyna's Boots",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 343,
+        "name": "Strong Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 344,
+        "name": "Ravaging Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 345,
+        "name": "Ravaging Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 346,
+        "name": "Ravaging Worn Chain Greaves",
+        "pic_url": "https://render.guildwars2.com/file/044D675DA29AFB786E32612D6B9141CA08D1EFEA/61009.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 347,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 348,
+        "name": "Ravaging Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 349,
+        "name": "Cleric's Sneakthief Sandals of the Traveler",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 350,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 351,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 352,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 353,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 354,
+        "name": "Mighty Magician Coat of the Grove",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 355,
+        "name": "Cleric's Sneakthief Sandals of the Dolyak",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 356,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 357,
+        "name": "Mighty Magician Coat of Vampirism",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 358,
+        "name": "Honed Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 359,
+        "name": "Strong Magician Coat of the Afflicted",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 360,
+        "name": "Strong Magician Coat of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 361,
+        "name": "Honed Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 362,
+        "name": "Strong Magician Coat of the Flock",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 363,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 364,
+        "name": "Ravaging Worn Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 365,
+        "name": "Zho's Boots",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 366,
+        "name": "Ravaging Magician Coat of the Lich",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 367,
+        "name": "Ravaging Magician Coat of Melandru",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 368,
+        "name": "Strong Cabalist Coat of the Lich",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 369,
+        "name": "Shaman's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 370,
+        "name": "Honed Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 371,
+        "name": "Strong Cabalist Coat of the Traveler",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 372,
+        "name": "Honed Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 373,
+        "name": "Strong Cabalist Coat of the Lich",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 374,
+        "name": "Shaman's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 375,
+        "name": "Sneakthief Sandals of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 376,
+        "name": "Ravaging Magician Coat of Vampirism",
+        "pic_url": "https://render.guildwars2.com/file/D1BBAB94232E2AD1F1253D573D45C4DCECDF0E02/61018.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 377,
+        "name": "Ravaging Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 378,
+        "name": "Ravaging Cabalist Coat of the Dolyak",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 379,
+        "name": "Shaman's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 380,
+        "name": "Ravaging Cabalist Coat of Strength",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 381,
+        "name": "Shaman's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 383,
+        "name": "Ravaging Cabalist Coat of the Grove",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 384,
+        "name": "Honed Cabalist Coat of the Eagle",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 385,
+        "name": "Ravaging Studded Coat",
+        "pic_url": "https://render.guildwars2.com/file/5050F9A0AAA5324F0501B7944876F0FA29DCEB97/61008.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 386,
+        "name": "Mighty Swindler Mask of the Eagle",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 387,
+        "name": "Honed Cabalist Coat of Strength",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 388,
+        "name": "Mighty Swindler Mask of Dwayna",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 389,
+        "name": "Honed Cabalist Coat of the Flock",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 390,
+        "name": "Shaman's Reinforced Scale Boots",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 391,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 392,
+        "name": "Strong Swindler Mask of Hoelbrak",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 393,
+        "name": "Honed Cabalist Coat of Rage",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 394,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 395,
+        "name": "Mighty Worn Scale Boots of Vampirism",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 396,
+        "name": "Ravaging Cabalist Coat of Mercy",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 397,
+        "name": "Strong Swindler Mask of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 398,
+        "name": "Berserker's Sneakthief Sandals of the Grove",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 399,
+        "name": "Ravaging Cabalist Coat of the Citadel",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 400,
+        "name": "Strong Swindler Mask of Rata Sum",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 401,
+        "name": "Mighty Worn Scale Boots of Scavenging",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 402,
+        "name": "Ravaging Swindler Mask of Grenth",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 403,
+        "name": "Berserker's Cabalist Coat of the Lich",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 404,
+        "name": "Berserker's Cabalist Coat of the Traveler",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 405,
+        "name": "Strong Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 406,
+        "name": "Strong Worn Scale Boots of the Grove",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 407,
+        "name": "Ravaging Swindler Mask of Rage",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 408,
+        "name": "Strong Privateer Hat of Grenth",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 409,
+        "name": "Berserker's Cabalist Coat of Lyssa",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 410,
+        "name": "Strong Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 411,
+        "name": "Berserker's Cabalist Coat of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 412,
+        "name": "Vatlaaw's Boots",
+        "pic_url": "https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 413,
+        "name": "Carrion Cabalist Coat of the Pack",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 414,
+        "name": "Strong Privateer Hat of Mercy",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 415,
+        "name": "Strong Worn Scale Boots of Hoelbrak",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 416,
+        "name": "Strong Privateer Hat of the Dolyak",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 417,
+        "name": "Strong Worn Scale Boots of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 418,
+        "name": "Carrion Cabalist Coat of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 419,
+        "name": "Strong Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 420,
+        "name": "Ravaging Swindler Mask of the Lich",
+        "pic_url": "https://render.guildwars2.com/file/F1D496205002073C9656A7E6E7550D0041045F0E/61016.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 421,
+        "name": "Carrion Cabalist Coat of Hoelbrak",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 422,
+        "name": "Strong Reinforced Scale Boots of the Pack",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 423,
+        "name": "Mighty Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 424,
+        "name": "Carrion Cabalist Coat of Lyssa",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 425,
+        "name": "Carrion Cabalist Coat of the Dolyak",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 426,
+        "name": "Ravaging Privateer Hat of the Dolyak",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 427,
+        "name": "Ravaging Privateer Hat of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 428,
+        "name": "Rampager's Cabalist Coat of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 429,
+        "name": "Strong Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 430,
+        "name": "Strong Reinforced Scale Boots of the Pack",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 431,
+        "name": "Ravaging Privateer Hat of the Traveler",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 432,
+        "name": "Rampager's Cabalist Coat of the Lich",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 433,
+        "name": "Rampager's Cabalist Coat of Dwayna",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 434,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 435,
+        "name": "Honed Privateer Hat of the Grove",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 436,
+        "name": "Strong Reinforced Scale Boots of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 437,
+        "name": "Honed Privateer Hat of Scavenging",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 438,
+        "name": "Rampager's Cabalist Coat of Dwayna",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 439,
+        "name": "Honed Privateer Hat of the Citadel",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 440,
+        "name": "Berserker's Reinforced Scale Boots of the Centaur",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 441,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 442,
+        "name": "Shaman's Cabalist Coat of Strength",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 443,
+        "name": "Shaman's Cabalist Coat of the Eagle",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 444,
+        "name": "Honed Privateer Hat of Balthazar",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 445,
+        "name": "Berserker's Reinforced Scale Boots of Grenth",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 446,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 447,
+        "name": "Ravaging Privateer Hat of Rata Sum",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 448,
+        "name": "Shaman's Cabalist Coat of the Flock",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 449,
+        "name": "Shaman's Cabalist Coat of Balthazar",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 450,
+        "name": "Mighty Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 451,
+        "name": "Ravaging Privateer Hat of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 452,
+        "name": "Cleric's Cabalist Coat of the Afflicted",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 453,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 454,
+        "name": "Cleric's Cabalist Coat of Hoelbrak",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 455,
+        "name": "Berserker's Privateer Hat of the Afflicted",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 456,
+        "name": "Berserker's Reinforced Scale Boots of the Pack",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 457,
+        "name": "Mighty Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 458,
+        "name": "Cleric's Cabalist Coat of Dwayna",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 459,
+        "name": "Cleric's Cabalist Coat of the Pack",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 460,
+        "name": "Honed Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 461,
+        "name": "Carrion Reinforced Scale Boots of the Eagle",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 462,
+        "name": "Berserker's Privateer Hat of the Afflicted",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 463,
+        "name": "Berserker's Privateer Hat of Balthazar",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 464,
+        "name": "Honed Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 465,
+        "name": "Berserker's Reinforced Scale Boots of Vampirism",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 466,
+        "name": "Berserker's Privateer Hat of Rata Sum",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 467,
+        "name": "Ravaging Worn Scale Boots of the Dolyak",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 468,
+        "name": "Carrion Privateer Hat of the Citadel",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 469,
+        "name": "Strong Cabalist Coat of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 470,
+        "name": "Precise Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 471,
+        "name": "Strong Cabalist Coat of the Afflicted",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 472,
+        "name": "Carrion Privateer Hat of Divinity",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 473,
+        "name": "Honed Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 474,
+        "name": "Strong Cabalist Coat of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 475,
+        "name": "Ravaging Worn Scale Boots of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 476,
+        "name": "Carrion Privateer Hat of Strength",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 477,
+        "name": "Carrion Privateer Hat of Dwayna",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 478,
+        "name": "Ravaging Cabalist Coat of the Centaur",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 479,
+        "name": "Ravaging Cabalist Coat of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/73CEB0F9515E0627321A15DA1CA4A6F3F51A4CE6/61019.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 480,
+        "name": "Strong Conjurer Chest of the Flock",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 481,
+        "name": "Carrion Privateer Hat of Melandru",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 482,
+        "name": "Ravaging Worn Scale Boots of Rage",
+        "pic_url": "https://render.guildwars2.com/file/9CD8B8786A6F047FD375A7E5301A52320AD60ACC/61012.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 483,
+        "name": "Honed Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 484,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 485,
+        "name": "Ravaging Reinforced Scale Boots of the Eagle",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 486,
+        "name": "Rampager's Privateer Hat of Vampirism",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 487,
+        "name": "Berserker's Conjurer Chest of Rage",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 488,
+        "name": "Rampager's Privateer Hat of Balthazar",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 489,
+        "name": "Berserker's Conjurer Chest of the Centaur",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 490,
+        "name": "Berserker's Conjurer Chest of Strength",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 491,
+        "name": "Precise Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 492,
+        "name": "Ravaging Reinforced Scale Boots of Hoelbrak",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 493,
+        "name": "Rampager's Privateer Hat of the Centaur",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 494,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 495,
+        "name": "Ravaging Conjurer Chest of Rata Sum",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 496,
+        "name": "Carrion Reinforced Scale Boots of Strength",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 497,
+        "name": "Rampager's Privateer Hat of the Pack",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 498,
+        "name": "Carrion Conjurer Chest of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 499,
+        "name": "Shaman's Privateer Hat of the Citadel",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 500,
+        "name": "Carrion Conjurer Chest of Dwayna",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 501,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 502,
+        "name": "Carrion Conjurer Chest of Vampirism",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 503,
+        "name": "Precise Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 504,
+        "name": "Carrion Reinforced Scale Boots of Rage",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 505,
+        "name": "Carrion Conjurer Chest of Lyssa",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 506,
+        "name": "Shaman's Privateer Hat of Divinity",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 507,
+        "name": "Shaman's Privateer Hat of Divinity",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 508,
+        "name": "Honed Conjurer Chest of Balthazar",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 509,
+        "name": "Ravaging Swindler Coat",
+        "pic_url": "https://render.guildwars2.com/file/A3000C0865ABF0A071084F0F0D364610C6F0B503/61021.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 510,
+        "name": "Ravaging Reinforced Scale Boots of Mercy",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 511,
+        "name": "Shaman's Privateer Hat of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 512,
+        "name": "Rampager's Conjurer Chest of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 513,
+        "name": "Vital Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 514,
+        "name": "Rampager's Conjurer Chest of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 515,
+        "name": "Carrion Reinforced Scale Boots of Dwayna",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 516,
+        "name": "Cleric's Privateer Hat of the Citadel",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 517,
+        "name": "Berserker's Privateer Coat",
+        "pic_url": "https://render.guildwars2.com/file/9E384E500AE801DE793FFB0149BE330BDA542C58/61024.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 518,
+        "name": "Rampager's Conjurer Chest of Lyssa",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 519,
+        "name": "Rampager's Conjurer Chest of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 520,
+        "name": "Cleric's Privateer Hat of Rata Sum",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 521,
+        "name": "Carrion Reinforced Scale Boots of Lyssa",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 522,
+        "name": "Berserker's Privateer Coat",
+        "pic_url": "https://render.guildwars2.com/file/9E384E500AE801DE793FFB0149BE330BDA542C58/61024.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 523,
+        "name": "Shaman's Conjurer Chest of the Grove",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 524,
+        "name": "Cleric's Privateer Hat of the Citadel",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 525,
+        "name": "Cleric's Privateer Hat of the Lich",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 526,
+        "name": "Shaman's Conjurer Chest of the Eagle",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 527,
+        "name": "Honed Reinforced Scale Boots of Hoelbrak",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 528,
+        "name": "Berserker's Privateer Coat",
+        "pic_url": "https://render.guildwars2.com/file/9E384E500AE801DE793FFB0149BE330BDA542C58/61024.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 529,
+        "name": "Shaman's Conjurer Chest of Divinity",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 530,
+        "name": "Cleric's Conjurer Chest of the Eagle",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 531,
+        "name": "Cleric's Conjurer Chest of Scavenging",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 532,
+        "name": "Vital Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 533,
+        "name": "Strong Privateer Hat of Infiltration",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 534,
+        "name": "Honed Reinforced Scale Boots of Melandru",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 535,
+        "name": "Strong Privateer Hat of the Lich",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 536,
+        "name": "Honed Reinforced Scale Boots of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 537,
+        "name": "Berserker's Privateer Coat",
+        "pic_url": "https://render.guildwars2.com/file/9E384E500AE801DE793FFB0149BE330BDA542C58/61024.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 538,
+        "name": "Cleric's Conjurer Chest of the Traveler",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 539,
+        "name": "Conjurer Chest of Rage",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 540,
+        "name": "Strong Privateer Hat of Rage",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 541,
+        "name": "Berserker's Privateer Coat",
+        "pic_url": "https://render.guildwars2.com/file/9E384E500AE801DE793FFB0149BE330BDA542C58/61024.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 542,
+        "name": "Conjurer Chest of the Flame Legion",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 543,
+        "name": "Honed Reinforced Scale Boots of Scavenging",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 544,
+        "name": "Vital Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 545,
+        "name": "Conjurer Chest of Rata Sum",
+        "pic_url": "https://render.guildwars2.com/file/76CD08463A05730071D400254141B50E570662D3/61023.png",
+        "sellable": false
+    },
+    {
+        "gw2id": 546,
+        "name": "Ravaging Privateer Hat of Divinity",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 547,
+        "name": "Ravaging Privateer Hat of the Afflicted",
+        "pic_url": "https://render.guildwars2.com/file/746AA96A7C3E3136087451094F7D4DC403B526E7/61020.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 548,
+        "name": "Rampager's Reinforced Scale Boots of the Grove",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 549,
+        "name": "Carrion Privateer Coat",
+        "pic_url": "https://render.guildwars2.com/file/9E384E500AE801DE793FFB0149BE330BDA542C58/61024.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 550,
+        "name": "Strong Marauder Mask of Grenth",
+        "pic_url": "https://render.guildwars2.com/file/67FB026D5F927ADF0591F747CCE3662F33E42668/61025.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 551,
+        "name": "Mighty Country Boots",
+        "pic_url": "https://render.guildwars2.com/file/0CC3CC0819042C9692916BE0132CDB0E2E0325AA/61026.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 552,
+        "name": "Berserker's Marauder Mask of Melandru",
+        "pic_url": "https://render.guildwars2.com/file/67FB026D5F927ADF0591F747CCE3662F33E42668/61025.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 553,
+        "name": "Rampager's Reinforced Scale Boots of the Afflicted",
+        "pic_url": "https://render.guildwars2.com/file/17C9516D0F0B2EBA616ED794C00F59411E931702/61014.png",
+        "sellable": true
+    },
+    {
+        "gw2id": 554,
+        "name": "Malign Studded Boots",
+        "pic_url": "https://render.guildwars2.com/file/C05DCA62E84D18EF46D5357C217956C55BC3063E/61013.png",
+        "sellable": true
+    }
+]
