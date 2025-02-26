@@ -1,7 +1,41 @@
 {% extends 'base.html.twig' %}
-{%  block main %}
-    {{ parent() }}
-    {%  block home_page_content %}
 
+{% block main %}
+    {{ parent() }}
+    {% block home_page_content %}
+        <div class="items-container">
+            {% if items is not empty %}
+                <div class="items-list">
+                    {% for item in items %}
+                        <div class="item">
+                            {% if item.getPicUrl() is not empty %}
+                                <div class="icon">
+                                    <img src="{{ item.getPicUrl() }}" alt="{{ item.name }} Icon" class="item-icon">
+                                </div>
+                            {% endif %}
+                            <div class="item-details">
+                                <div class="item-name">{{ item.name }}</div>
+                                {# Hier können Sie weitere Informationen einfügen #}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    {% if currentPage > 1 %}
+                        <a href="{{ path('app_home_page', { page: currentPage - 1 }) }}" class="page-link">← Vorherige</a>
+                    {% endif %}
+
+                    <span class="page-info">Seite {{ currentPage }} von {{ totalPages }}</span>
+
+                    {% if currentPage < totalPages %}
+                        <a href="{{ path('app_home_page', { page: currentPage + 1 }) }}" class="page-link">Nächste →</a>
+                    {% endif %}
+                </div>
+            {% else %}
+                <p class="no-items">Keine Items gefunden.</p>
+            {% endif %}
+        </div>
     {% endblock %}
 {% endblock %}

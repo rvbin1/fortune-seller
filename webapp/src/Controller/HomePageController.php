@@ -3,7 +3,8 @@
 namespace App\Controller;
 
 use App\Form\SearchFormType;
-use App\Service\ProcessSearchData;
+use App\Service\ProcessSearchDataService;
+use App\Service\ShowItemsService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,13 +13,16 @@ use Symfony\Component\Routing\Attribute\Route;
 final class HomePageController extends AbstractController
 {
 
-    public function __construct(private readonly ProcessSearchData $psd)
+    public function __construct(private readonly ProcessSearchDataService $psd,
+                                private readonly ShowItemsService $sis)
     {
     }
 
-    #[Route('/', name: 'app_home_page')]
-    public function index(Request $request): Response
+    #[Route('/{page<\d+>?1}', name: 'app_home_page')]
+    public function index(int $page, Request $request): Response
     {
+        $pagination = $this->sis->showItemsPaginated($page);
+
         $searchForm = $this->createForm(SearchFormType::class);
         $searchForm->handleRequest($request);
 
@@ -29,6 +33,9 @@ final class HomePageController extends AbstractController
 
         return $this->render('home_page/index.html.twig', [
             'searchForm' => $searchForm->createView(),
+            'items' => $pagination['items'],
+            'totalPages' => $pagination['totalPages'],
+            'currentPage' => $pagination['currentPage'],
         ]);
     }
 }
