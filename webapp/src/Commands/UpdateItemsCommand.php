@@ -56,7 +56,6 @@ class UpdateItemsCommand extends Command
             $output->writeln('<error>Fehler beim Deserialisieren der JSON-Daten: ' . $e->getMessage() . '</error>');
             return Command::FAILURE;
         }
-
         foreach ($items as $item) {
             $this->entityManager->persist($item);
         }

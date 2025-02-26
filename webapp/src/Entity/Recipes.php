@@ -22,6 +22,9 @@ class Recipes
     #[ORM\OneToMany(targetEntity: RecipeIngredients::class, mappedBy: 'recipe', cascade: ['persist', 'remove'])]
     private Collection $ingredients;
 
+    #[ORM\Column]
+    private ?int $gw2_recipe_id = null;
+
     public function __construct()
     {
         $this->ingredients = new ArrayCollection();
@@ -68,6 +71,18 @@ class Recipes
                 $ingredient->setRecipe(null);
             }
         }
+        return $this;
+    }
+
+    public function getGw2RecipeId(): ?int
+    {
+        return $this->gw2_recipe_id;
+    }
+
+    public function setGw2RecipeId(int $gw2_recipe_id): static
+    {
+        $this->gw2_recipe_id = $gw2_recipe_id;
+
         return $this;
     }
 }

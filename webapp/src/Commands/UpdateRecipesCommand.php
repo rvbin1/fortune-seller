@@ -5,6 +5,7 @@ namespace App\Commands;
 use App\Entity\Recipes;
 use App\Entity\RecipeIngredients;
 use App\Entity\Item;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -65,7 +66,7 @@ class UpdateRecipesCommand extends Command
 
             // Output-Item laden und prüfen, ob es existiert
             $outputItem = $this->entityManager->getRepository(Item::class)
-                ->find($recipeData['output_item_id']);
+                ->findOneBy(['gw2Id' => $recipeData['output_item_id']]);
 
             if (!$outputItem) {
                 $output->writeln(sprintf(
@@ -74,14 +75,16 @@ class UpdateRecipesCommand extends Command
                 ));
                 continue;
             }
+
+            if (isset($recipeData['gw2_id'])) $recipe->setGw2RecipeId($recipeData['gw2_id']);
+
             $recipe->setOutputItem($outputItem);
 
-            // Zutaten hinzufügen
             if (isset($recipeData['ingredients']) && is_array($recipeData['ingredients'])) {
                 foreach ($recipeData['ingredients'] as $ingredientData) {
                     // Ingredient laden und prüfen, ob es existiert
                     $ingredient = $this->entityManager->getRepository(Item::class)
-                        ->find($ingredientData['item_id']);
+                        ->findOneBy(['gw2Id' => $recipeData['output_item_id']]);
 
                     if (!$ingredient) {
                         $output->writeln(sprintf(
@@ -95,7 +98,6 @@ class UpdateRecipesCommand extends Command
                     $recipeIngredient->setIngredient($ingredient);
                     $recipeIngredient->setQuantity($ingredientData['count']);
 
-                    // Die Beziehung wird durch addIngredient() gesetzt
                     $recipe->addIngredient($recipeIngredient);
                 }
             }
