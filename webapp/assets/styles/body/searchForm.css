@@ -1,15 +1,12 @@
 .searchBar {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-}
-
-.searchBar form {
-    display: flex;
     align-items: center;
+    margin-top: 30px;
     width: 50%;
     max-width: 600px;
-    gap: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .searchBar input {
@@ -36,5 +33,31 @@
 
 .searchBar button:hover {
     background-color: darkred;
-    border: darkred;
+    border-color: darkred;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin-top: 30px;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.checkbox-item {
+    margin: 0 15px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+.checkbox-item label {
+    font-size: 1.2rem;
+    margin-right: 10px;
 }
