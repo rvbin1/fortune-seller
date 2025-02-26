@@ -21,14 +21,13 @@ final class HomePageController extends AbstractController
     #[Route('/{page<\d+>?1}', name: 'app_home_page')]
     public function index(int $page, Request $request): Response
     {
-        $pagination = $this->sis->showItemsPaginated($page);
-
         $searchForm = $this->createForm(SearchFormType::class);
         $searchForm->handleRequest($request);
-
         if ($searchForm->isSubmitted() && $searchForm->isValid()) {
             $searchFormData = $searchForm->getData();
-            $this->psd->processData($searchFormData);
+            $pagination = $this->psd->processData($page, $searchFormData);
+        }else{
+            $pagination = $this->sis->showItemsPaginated($page);
         }
 
         return $this->render('home_page/index.html.twig', [
@@ -37,5 +36,7 @@ final class HomePageController extends AbstractController
             'totalPages' => $pagination['totalPages'],
             'currentPage' => $pagination['currentPage'],
         ]);
+
+
     }
 }

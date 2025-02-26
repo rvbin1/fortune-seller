@@ -18,23 +18,30 @@ class ShowItemsService
        $this->falseItemRegex = ["^\\(\\([0-9]+\\)\\)$", "^\\[\\[[0-9]+\\]\\]$"];
     }
 
-    public function showItemsPaginated(int $page): array
+    public function showItemsPaginated(int $page, ?string $searchString = null): array
     {
         $query = $this->em->getRepository(Item::class)
             ->createQueryBuilder('i')
             ->setFirstResult(($page - 1) * self::ITEMS_PER_PAGE)
             ->setMaxResults(self::ITEMS_PER_PAGE)
-            ->where("i.name != ''")
-            ->andWhere("i.sellable = 1");
+            ->where("i.sellable = 1")
+            ->andWhere("i.name IS NOT NULL")
+            ->andWhere("i.name <> ''");
 
-            foreach ($this->falseItem as $falseItem){
-                $query->andWhere("i.name NOT LIKE '%". $falseItem ."%'");
-            }
+        if ($searchString) {
+            $query->andWhere("i.name LIKE :search")
+                ->setParameter('search', '%'.$searchString.'%');
+        }
 
-            foreach ($this->falseItemRegex as $falseItemRegex)
-            {
-                $query->andWhere("regexp(i.name, '". $falseItemRegex ."') = 0");
-            }
+        foreach ($this->falseItem as $falseItem) {
+            $query->andWhere("i.name NOT LIKE :falseItem")
+                ->setParameter("falseItem", '%'.$falseItem.'%');
+        }
+
+        foreach ($this->falseItemRegex as $falseItemRegex) {
+            $query->andWhere("regexp(i.name, :falseItemRegex) = 0")
+                ->setParameter("falseItemRegex", $falseItemRegex);
+        }
 
         $query->getQuery();
 

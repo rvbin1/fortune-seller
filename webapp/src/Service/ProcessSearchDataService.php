@@ -6,20 +6,20 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class ProcessSearchDataService
 {
-    public function __construct(private readonly EntityManagerInterface $em)
+    public function __construct(private readonly EntityManagerInterface $em,
+                                private readonly ShowItemsService $sis)
     {
     }
 
-    public function processData($searchData)
+    public function processData($page ,$searchData)
     {
+
         if (is_array($searchData) && !empty($searchData))
         {
-
+            if ($searchData['query'] != null && $searchData['query'] !== '')
+            {
+                return $this->sis->showItemsPaginated($page, $searchData['query']);
+            }
         }
-    }
-
-    private function findItems($query, $crafting = false, $selling = false, $convert = false)
-    {
-
     }
 }
