@@ -21,22 +21,31 @@ final class HomePageController extends AbstractController
     #[Route('/{page<\d+>?1}', name: 'app_home_page')]
     public function index(int $page, Request $request): Response
     {
+        $query = $request->query->get('query');
+
         $searchForm = $this->createForm(SearchFormType::class);
         $searchForm->handleRequest($request);
+
         if ($searchForm->isSubmitted() && $searchForm->isValid()) {
             $searchFormData = $searchForm->getData();
-            $pagination = $this->psd->processData($page, $searchFormData);
-        }else{
+            return $this->redirectToRoute('app_home_page', [
+                'page'  => 1,
+                'query' => $searchFormData['query'],
+            ]);
+        }
+
+        if ($query) {
+            $pagination = $this->psd->processData($page, ['query' => $query]);
+        } else {
             $pagination = $this->sis->showItemsPaginated($page);
         }
 
         return $this->render('home_page/index.html.twig', [
-            'searchForm' => $searchForm->createView(),
-            'items' => $pagination['items'],
-            'totalPages' => $pagination['totalPages'],
-            'currentPage' => $pagination['currentPage'],
+            'searchForm'    => $searchForm->createView(),
+            'items'         => $pagination['items'],
+            'totalPages'    => $pagination['totalPages'],
+            'currentPage'   => $pagination['currentPage'],
+            'query'         => $query,
         ]);
-
-
     }
 }

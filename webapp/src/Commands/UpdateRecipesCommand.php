@@ -36,6 +36,7 @@ class UpdateRecipesCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        //TODO REZEPTE AKTUALISIEREN UND NICHT NEU IN DIE DB SCHREIBEN
         $output->writeln('Lese Rezepte aus der JSON-Datei...');
 
         // Pfad zur JSON-Datei im public-Verzeichnis ermitteln

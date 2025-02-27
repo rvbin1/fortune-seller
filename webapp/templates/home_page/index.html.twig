@@ -15,24 +15,11 @@
                             {% endif %}
                             <div class="item-details">
                                 <div class="item-name">{{ item.name }}</div>
-                                {# Hier können Sie weitere Informationen einfügen #}
                             </div>
                         </div>
                     {% endfor %}
                 </div>
-
-                <!-- Pagination -->
-                <div class="pagination">
-                    {% if currentPage > 1 %}
-                        <a href="{{ path('app_home_page', { page: currentPage - 1 }) }}" class="page-link">← Vorherige</a>
-                    {% endif %}
-
-                    <span class="page-info">Seite {{ currentPage }} von {{ totalPages }}</span>
-
-                    {% if currentPage < totalPages %}
-                        <a href="{{ path('app_home_page', { page: currentPage + 1 }) }}" class="page-link">Nächste →</a>
-                    {% endif %}
-                </div>
+                {{ include('includes/pagination.html.twig') }}
             {% else %}
                 <p class="no-items">Keine Items gefunden.</p>
             {% endif %}
