@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ItemRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ItemRepository::class)]
@@ -32,6 +33,9 @@ class Item
 
     #[ORM\Column]
     private ?bool $sellable = null;
+
+    #[ORM\Column(type: Types::ARRAY, nullable: true)]
+    private ?array $attributes = null;
 
     public function __construct()
     {
@@ -111,6 +115,18 @@ class Item
     public function setSellable(bool $sellable): static
     {
         $this->sellable = $sellable;
+
+        return $this;
+    }
+
+    public function getAttributes(): ?array
+    {
+        return $this->attributes;
+    }
+
+    public function setAttributes(?array $attributes): static
+    {
+        $this->attributes = $attributes;
 
         return $this;
     }
