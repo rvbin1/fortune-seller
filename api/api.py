@@ -84,7 +84,6 @@ def get_recipe_data(url: str) -> dict:
     :rtype: dict
     """
     response = requests.get(url)
-    print("hier", url)
     return_json = json.loads(response.content)
     if isinstance(return_json, dict):
         return {return_json["id"]: {
