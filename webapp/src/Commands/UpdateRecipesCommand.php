@@ -83,9 +83,8 @@ class UpdateRecipesCommand extends Command
 
             if (isset($recipeData['ingredients']) && is_array($recipeData['ingredients'])) {
                 foreach ($recipeData['ingredients'] as $ingredientData) {
-                    // Ingredient laden und prüfen, ob es existiert
                     $ingredient = $this->entityManager->getRepository(Item::class)
-                        ->findOneBy(['gw2Id' => $recipeData['output_item_id']]);
+                        ->findOneBy(['gw2Id' => $ingredientData['item_id']]);
 
                     if (!$ingredient) {
                         $output->writeln(sprintf(
