@@ -15,7 +15,7 @@ def get_item_data(url: str) -> dict:
     return_json = json.loads(response.content)
     if isinstance(return_json, dict):
         # default dict so that missing icon or attributes in an item don't break the code
-        return_json = defaultdict(bool, return_json)
+        return_json = defaultdict(str, return_json)
         # for attribute 'details' a new dict has to be made because defaultdict can only check the first level key
         if type(item_data["details"]) != bool:
             if "infix_upgrade" in item_data["details"]:
@@ -32,7 +32,7 @@ def get_item_data(url: str) -> dict:
     else:
         return_dict = {}
         for item_data in return_json:
-            item_data = defaultdict(bool, item_data)
+            item_data = defaultdict(str, item_data)
             # for details a new dict has to be made because defaultdict can only check the first level key and has to be checked if its there
             if type(item_data["details"]) != bool:
                 if "infix_upgrade" in item_data["details"]:
@@ -84,7 +84,6 @@ def get_recipe_data(url: str) -> dict:
     :rtype: dict
     """
     response = requests.get(url)
-    print("hier", url)
     return_json = json.loads(response.content)
     if isinstance(return_json, dict):
         return {return_json["id"]: {
@@ -194,16 +193,22 @@ def write_mystic_forge_data() -> list:
 
     return recipe_content
 
-def main(): 
+def main():
+    print("Collecting item data")
     item_content = write_item_data()
+    print("Finished collecting item data. Writing item.json file")
     with open('items.json', 'w', encoding='utf-8') as f:
         json.dump(item_content, f, ensure_ascii=False, indent=4)  
 
+    print("Collecting recipe data")
     recipes_content = write_recipe_data()
+    print("Finished collecting recipe data. Writing recipe.json file")
     with open("recipe.json", "w", encoding="utf-8") as f:
         json.dump(recipes_content, f, ensure_ascii=False, indent=4) 
-    
+
+    print("Collecting Mystic forge recipe data")
     mystic_content = write_mystic_forge_data()
+    print("Finished collecting mystic forge recipe data. Writing mysticForge.json file")
     with open("mysticForge.json", "w", encoding="utf-8") as f:
         json.dump(mystic_content, f, ensure_ascii=False, indent=4)
 
