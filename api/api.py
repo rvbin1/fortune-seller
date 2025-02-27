@@ -19,11 +19,11 @@ def get_item_data(url: str) -> dict:
         # for attribute 'details' a new dict has to be made because defaultdict can only check the first level key
         if type(item_data["details"]) != bool:
             if "infix_upgrade" in item_data["details"]:
-                item_data_details = defaultdict(bool, item_data["details"]["infix_upgrade"])
+                item_data_details = defaultdict(list, item_data["details"]["infix_upgrade"])
             else: 
-                item_data_details = defaultdict(bool)
+                item_data_details = defaultdict(list)
         else: 
-            item_data_details = defaultdict(bool)
+            item_data_details = defaultdict(list)
         return {return_json["id"]: {
             "name": return_json["name"],
             "icon": return_json["icon"],
@@ -36,11 +36,11 @@ def get_item_data(url: str) -> dict:
             # for details a new dict has to be made because defaultdict can only check the first level key and has to be checked if its there
             if type(item_data["details"]) != bool:
                 if "infix_upgrade" in item_data["details"]:
-                    item_data_details = defaultdict(bool, item_data["details"]["infix_upgrade"])
+                    item_data_details = defaultdict(list, item_data["details"]["infix_upgrade"])
                 else: 
-                    item_data_details = defaultdict(bool)
+                    item_data_details = defaultdict(list)
             else: 
-                item_data_details = defaultdict(bool)
+                item_data_details = defaultdict(list)
             return_dict[item_data["id"]] = {
                 "name": item_data["name"],
                 "icon": item_data["icon"],
