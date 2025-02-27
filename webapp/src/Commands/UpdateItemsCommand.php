@@ -33,6 +33,7 @@ class UpdateItemsCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        //TODO ITEMS AKTUALISIEREN UND NICHT NEU IN DIE DB SCHREIBEN
         $output->writeln('Lese die Item-Daten aus der JSON-Datei...');
 
         $filePath = $this->kernel->getProjectDir() . '/public/json/' . self::ITEMS_JSON;

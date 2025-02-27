@@ -1,8 +1,24 @@
 {% block body %}
+    {{ form_start(searchForm, {'attr': {'class': 'searchForm'}}) }}
+
     <div class="searchBar">
-        {{ form_start(searchForm, {'attr': {'class': 'searchForm'}}) }}
         {{ form_widget(searchForm.query, {'attr': {'class': 'searchInput'}}) }}
         {{ form_widget(searchForm.submit, {'attr': {'class': 'searchButton'}}) }}
-        {{ form_end(searchForm) }}
     </div>
+
+    <div class="checkbox">
+        <div class="checkbox-container">
+            <div class="checkbox-item">
+                {{ form_row(searchForm.crafting) }}
+            </div>
+            <div class="checkbox-item">
+                {{ form_row(searchForm.selling) }}
+            </div>
+            <div class="checkbox-item">
+                {{ form_row(searchForm.converting) }}
+            </div>
+        </div>
+    </div>
+
+    {{ form_end(searchForm) }}
 {% endblock %}

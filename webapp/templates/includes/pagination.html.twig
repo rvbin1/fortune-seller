@@ -1,0 +1,11 @@
+<div class="pagination">
+    {% if currentPage > 1 %}
+        <a href="{{ path('app_home_page', { page: currentPage - 1, query: app.request.query.get('query') }) }}" class="page-link">← Vorherige</a>
+    {% endif %}
+
+    <span class="page-info">Seite {{ currentPage }} von {{ totalPages }}</span>
+
+    {% if currentPage < totalPages %}
+        <a href="{{ path('app_home_page', { page: currentPage + 1, query: app.request.query.get('query') }) }}" class="page-link">Nächste →</a>
+    {% endif %}
+</div>
