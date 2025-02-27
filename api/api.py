@@ -15,7 +15,7 @@ def get_item_data(url: str) -> dict:
     return_json = json.loads(response.content)
     if isinstance(return_json, dict):
         # default dict so that missing icon or attributes in an item don't break the code
-        return_json = defaultdict(bool, return_json)
+        return_json = defaultdict(str, return_json)
         # for attribute 'details' a new dict has to be made because defaultdict can only check the first level key
         if type(item_data["details"]) != bool:
             if "infix_upgrade" in item_data["details"]:
