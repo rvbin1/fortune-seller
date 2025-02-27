@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% block main %}
+        <div class="detail-item-container">
+            <div class="detail-icon">
+                <img src="{{ item.getPicUrl() }}" alt="{{ item.getName() }} Icon" class="detail-item-icon">
+            </div>
+            <div class="detail-item-name">
+                {{ item.getName() }}
+            </div>
+            <div class="detail-recipe">
+            {% if item.getRecipes() is not empty %}
+                {% for recipe in item.getRecipes() %}
+                    {{ dump(recipe) }}
+                    <div class="detail-ingredient">
+                    {% for ingredient in recipe.getIngredients() %}
+                        {{ ingredient.getIngredient().getName() }}
+                    {% endfor %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}
