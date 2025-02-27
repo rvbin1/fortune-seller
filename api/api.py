@@ -1,78 +1,211 @@
 import requests
 import json
-import time
+from collections import defaultdict
 
-# für Items
+def get_item_data(url: str) -> dict:
+    """
+    This function makes an api request for one or multiple items and returns the wanted attributes about name, id, icon and item_attributes
 
-""" response = requests.get("https://api.guildwars2.com/v2/items/1598")
-items = json.loads(response.content)
-print(response.content)
-all_ids = []
-exit()
-for id in items:
-    item_data = requests.get(f"https://api.guildwars2.com/v2/items/{id}")
-    item_data_json = json.loads(item_data.content)
-    try:
-        item_name = item_data_json["name"]
-    except:
-        time.sleep(180)
-        item_data = requests.get(f"https://api.guildwars2.com/v2/items/{id}")
-        print(item_data.content)
-        item_data_json = json.loads(item_data.content)
-        item_name = item_data_json["name"]
+    :param url: The request to be send
+    :type url: str
+    :return: returnes a dict with all ids and attributes
+    :rtype: dict
+    """
+    response = requests.get(url)
+    return_json = json.loads(response.content)
+    if isinstance(return_json, dict):
+        # default dict so that missing icon or attributes in an item don't break the code
+        return_json = defaultdict(bool, return_json)
+        # for attribute 'details' a new dict has to be made because defaultdict can only check the first level key
+        if type(item_data["details"]) != bool:
+            if "infix_upgrade" in item_data["details"]:
+                item_data_details = defaultdict(bool, item_data["details"]["infix_upgrade"])
+            else: 
+                item_data_details = defaultdict(bool)
+        else: 
+            item_data_details = defaultdict(bool)
+        return {return_json["id"]: {
+            "name": return_json["name"],
+            "icon": return_json["icon"],
+            "attributes": item_data_details["attributes"],
+        }}
+    else:
+        return_dict = {}
+        for item_data in return_json:
+            item_data = defaultdict(bool, item_data)
+            # for details a new dict has to be made because defaultdict can only check the first level key and has to be checked if its there
+            if type(item_data["details"]) != bool:
+                if "infix_upgrade" in item_data["details"]:
+                    item_data_details = defaultdict(bool, item_data["details"]["infix_upgrade"])
+                else: 
+                    item_data_details = defaultdict(bool)
+            else: 
+                item_data_details = defaultdict(bool)
+            return_dict[item_data["id"]] = {
+                "name": item_data["name"],
+                "icon": item_data["icon"],
+                "attributes": item_data_details["attributes"],
+            }
+        return return_dict
 
-    with open("items.txt", "a+") as file:
-        all_ids.append(id)
-        print(id, item_name)
-        file.write(f"{id}:{item_name}\n")
+def get_sellable_data(url: str) -> dict:
+    """
+    This function makes an api request for one or multiple item sell prices and returns if the item/s are sellable.
 
-print(all_ids) """
+    :param url: The request to be send
+    :type url: str
+    :return: returnes a dict with the ids and sell status
+    :rtype: dict
+    """
+    response = requests.get(url)
+    return_json = json.loads(response.content)
+    if isinstance(return_json, dict):
+        # if all ids have no sell value an empty dict needs to be returned
+        if "all ids provided are invalid" in response.text:
+            return {}
+        # here it needs a try-statement has to be put in since a defaultdict would still give a value back
+        try:
+            return {return_json["id"]: True}
+        except:
+            return {return_json["id"]: False}
+    else:
+        return_dict = {}
+        for item_data in return_json:
+            return_dict[item_data["id"]] = True
+        return return_dict
+    
+def get_recipe_data(url: str) -> dict:
+    """
+    This function makes an api request for one or multiple recipes and returns the wanted attributes about id, output_item, ingredients
 
+    :param url: The request to be send
+    :type url: str
+    :return: returnes a dict with all ids and attributes
+    :rtype: dict
+    """
+    response = requests.get(url)
+    print("hier", url)
+    return_json = json.loads(response.content)
+    if isinstance(return_json, dict):
+        return {return_json["id"]: {
+            "output_item_id": return_json["output_item_id"],
+            "ingredients": return_json["ingredients"],
+        }}
+    else:
+        return_dict = {}
+        for item_data in return_json:
+            item_data = defaultdict(bool, item_data)
+            return_dict[item_data["id"]] = {
+                "output_item_id": item_data["output_item_id"],
+                "ingredients": item_data["ingredients"],
+            }
+        return return_dict
 
-""" # für Rezepte
-response = requests.get("https://api.guildwars2.com/v2/recipes/search?input=19976")
-items = json.loads(response.content)
-print(items)
-for id in items:
-    item_data = requests.get(f"https://api.guildwars2.com/v2/recipes/{id}")
-    item_data_json = json.loads(item_data.content)
-    print(item_data_json) """
+def write_item_data() -> list:
+    """
+    This function counts item ids to build an url and collects via a request call all information about the items available
 
+    :return: returnes a dict with all item and the attributes: id, name, pic_url, sellable, item_attributes
+    :rtype: dict
+    """
+    item_content = []
+    response = requests.get("https://api.guildwars2.com/v2/items/")
+    item_ids = json.loads(response.content)
+    i = 0
+    item_url = "https://api.guildwars2.com/v2/items?ids="
+    sell_url = "https://api.guildwars2.com/v2/commerce/prices?ids="
+    for id in item_ids:
+        if i < 200:
+            i += 1
+            item_url = item_url + str(id) + ","
+            sell_url = sell_url + str(id) + ","
+        if i == 199:
+            item_url = item_url.removesuffix(",")
+            sell_url = sell_url.removesuffix(",")
+            item_data = get_item_data(item_url)
+            sell_data = defaultdict(bool, get_sellable_data(sell_url))
+            for item in item_data:
+                item_content.append({"gw2id": item, "name": item_data[item]["name"], "pic_url": item_data[item]["icon"], "sellable": sell_data[item], "attributes": item_data[item]["attributes"]})
+            
+            # back to initial state
+            i = 0
+            item_url = "https://api.guildwars2.com/v2/items?ids="
+            sell_url = "https://api.guildwars2.com/v2/commerce/prices?ids="
+            
+        # because the amount of ids are not dividable by 200
+        if id == item_ids[-1]:
+            item_url = item_url.removesuffix(",")
+            sell_url = sell_url.removesuffix(",")
+            item_data = get_item_data(item_url)
+            sell_data = defaultdict(bool, get_sellable_data(sell_url))
+            for item in item_data:
+                item_content.append({"gw2id": item, "name": item_data[item]["name"], "pic_url": item_data[item]["icon"], "sellable": sell_data[item], "attributes": item_data[item]["attributes"]})
+            
 
-#Rezept ids rausbekommen mit Item namen welche als Output existiert.
+    return item_content
 
-all_ids = {}
-with open("items.txt") as file:
-    for line in file.readlines():
-        id = int(line.split(":")[0])
-        all_ids[id] = line.split(":")[1].strip("\n")
+def write_recipe_data() -> list:
+    """
+    This function counts recipe ids to build an url and collects via a request call all information about the items available
 
-response = requests.get("https://api.guildwars2.com/v2/recipes/")
-recipes = json.loads(response.content)
-for recipe_id in recipes:
-    print("Zu suchende Id", recipe_id)
-    recipe_data = requests.get(f"https://api.guildwars2.com/v2/recipes/{recipe_id}")
-    recipe_data_json = json.loads(recipe_data.content)
-    try:
-        output_item_id = recipe_data_json["output_item_id"]
-    except:
-        print("Wartezeit")
-        time.sleep(180)
-        recipe_data = requests.get(f"https://api.guildwars2.com/v2/recipes/{recipe_id}")
-        print(recipe_data.content)
-        recipe_data_json = json.loads(recipe_data.content)
-        output_item_id = recipe_data_json["output_item_id"]
+    :return: returnes a dict with all item and the attributes: id, output_item_id, ingredients
+    :rtype: dict
+    """
+    recipe_content = []
+    response = requests.get("https://api.guildwars2.com/v2/recipes/")
+    recipes_ids = json.loads(response.content)
+    i = 0
+    recipe_url = "https://api.guildwars2.com/v2/recipes?ids="
+    for id in recipes_ids:
+        if i < 200:
+            i += 1
+            recipe_url = recipe_url + str(id) + ","
+        if i == 199:
+            recipe_url = recipe_url.removesuffix(",")
+            item_data = get_recipe_data(recipe_url)
+            for item in item_data:
+                recipe_content.append({"gw2_id": item, "output_item_id": item_data[item]["output_item_id"], "ingredients": item_data[item]["ingredients"]})
 
-    with open("recipes.txt", "a+") as file:
-        file.write(f"{recipe_id}:{output_item_id}:{all_ids[output_item_id]}\n")
+            # back to initial state
+            i = 0
+            recipe_url = "https://api.guildwars2.com/v2/recipes?ids="
+        if id == recipes_ids[-1]:
+            recipe_url = recipe_url.removesuffix(",")
+            item_data = get_recipe_data(recipe_url)
+            for item in item_data:
+                recipe_content.append({"gw2_id": item, "output_item_id": item_data[item]["output_item_id"], "ingredients": item_data[item]["ingredients"]})
 
-""" 
-Also unterschiedliche IDs für recipes und items
-heißt zwei Anfragen welche rezepte, welche items da rauskommen, und dann das item abfragen
-In der Datenbank sollte es also im besten Fall die Eigenschaften geben: Name, Item_id, picutre_id, verkäuflich, mystic forge (man muss da an eine andere Seite ein Anfrage senden),rezept_id (damit man weiß welches Rezept welches item hat und nicht erst mit einem api zugriff nachgeguckt werden muss.)
- """
-#TODO noch mal alle Items eingeben da manche Items welche Rezept im Namen tragen nicht richtig gelesen werden konnten.
-#TODO Ausgabe soll in JSON Format passieren und sonst mit Flags soll start des Programmes gemacht werden. 
-#TODO 
+    return recipe_content
 
-item -> rezepten_ids -> item -> verkäuft
+def write_mystic_forge_data() -> list:
+    """
+    This function makes an api call for the mystic forge recipes and collect data of all available recipes
+
+    :return: returnes a dict with all item and the attributes: id, output_item_id, ingredients
+    :rtype: dict
+    """
+
+    # because a different api need to be used for the mystic forge the code is shorter
+    recipe_content = []
+    response = requests.get("https://gw2profits.com/json/v3?disciplines=Mystic%20Forge")
+    mystic_forge_recipes = json.loads(response.content)
+    for mystic_forge_recipe in mystic_forge_recipes:
+        recipe_content.append({"gw2_id": mystic_forge_recipe["id"], "output_item_id": mystic_forge_recipe["output_item_id"], "ingredients": mystic_forge_recipe["ingredients"]})
+
+    return recipe_content
+
+def main(): 
+    item_content = write_item_data()
+    with open('items.json', 'w', encoding='utf-8') as f:
+        json.dump(item_content, f, ensure_ascii=False, indent=4)  
+
+    recipes_content = write_recipe_data()
+    with open("recipe.json", "w", encoding="utf-8") as f:
+        json.dump(recipes_content, f, ensure_ascii=False, indent=4) 
+    
+    mystic_content = write_mystic_forge_data()
+    with open("mysticForge.json", "w", encoding="utf-8") as f:
+        json.dump(mystic_content, f, ensure_ascii=False, indent=4)
+
+if __name__ == "__main__": 
+    main()
