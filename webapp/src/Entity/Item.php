@@ -57,6 +57,9 @@ class Item
     #[ORM\OneToMany(mappedBy: 'ingredientItem', targetEntity: MysticForgeIngredients::class)]
     private Collection $usedInMysticForgeIngredients;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $price = null;
+
     public function __construct()
     {
         $this->producedRecipes = new ArrayCollection();
@@ -226,5 +229,17 @@ class Item
             $attributeNames[] = $attribute['attribute'];
         }
         return implode(', ', $attributeNames);
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?int $price): static
+    {
+        $this->price = $price;
+
+        return $this;
     }
 }
