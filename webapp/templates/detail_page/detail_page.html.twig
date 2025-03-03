@@ -9,15 +9,26 @@
                 {{ item.getName() }}
             </div>
             <div class="detail-recipe">
-            {% if item.getRecipes() is not empty %}
-                {% for recipe in item.getRecipes() %}
-                    <div class="detail-ingredient">
+            {% if item.getProducedRecipes() is not empty %}
+                {% for recipe in item.getProducedRecipes() %}
+                    <div class="detail-recipe-ingredient">
                     {% for ingredient in recipe.getIngredients() %}
                         {{ ingredient.getIngredient().getName() }}
                     {% endfor %}
                     </div>
                 {% endfor %}
             {% endif %}
+            </div>
+            <div class="detail-mystic-forge">
+                {% if item.getProducedMysticForges() is not empty %}
+                    {% for mysticForge in item.getProducedMysticForges() %}
+                        <div class="detail-mystic-forge-ingredient">
+                            {% for ingredient in mysticForge.getIngredients() %}
+                                {{ ingredient.getIngredient().getName() }}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
     {% endblock %}
