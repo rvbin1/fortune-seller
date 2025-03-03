@@ -1,3 +1,51 @@
-.detail-item-container{
-    margin: 20px;
+.detail-container {
+    width: 80%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.detail-item-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.detail-item-info h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.detail-content {
+    margin-top: 20px;
+}
+
+/* Container für Rezept-Boxen bzw. Mystic-Forge-Boxen */
+.detail-recipe-list {
+    display: flex;
+    flex-wrap: wrap; /* Damit die Boxen bei Platzmangel umbrechen */
+    gap: 20px;
+}
+
+.detail-recipe-box {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    min-width: 200px; /* Mindestbreite, damit sie wie Boxen wirken */
+    background-color: #f9f9f9;
+}
+
+.ingredient {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
 }

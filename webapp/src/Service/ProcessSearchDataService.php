@@ -4,10 +4,10 @@ namespace App\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
 
-class ProcessSearchDataService
+readonly class ProcessSearchDataService
 {
-    public function __construct(private readonly EntityManagerInterface $em,
-                                private readonly ShowItemsService $sis)
+    public function __construct(private EntityManagerInterface $em,
+                                private ShowItemsService       $sis)
     {
     }
 

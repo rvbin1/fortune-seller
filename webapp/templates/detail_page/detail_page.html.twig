@@ -1,33 +1,63 @@
 {% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
+{% endblock %}
+
 {% block body %}
     {% block main %}
-        <div class="detail-item-container">
-            <div class="detail-icon">
+        <div class="detail-container">
+            <!-- Kopfbereich mit Item-Icon und Name -->
+            <div class="detail-header">
                 <img src="{{ item.getPicUrl() }}" alt="{{ item.getName() }} Icon" class="detail-item-icon">
+                <div class="detail-item-info">
+                    <h2>{{ item.getName() }}</h2>
+                </div>
             </div>
-            <div class="detail-item-name">
-                {{ item.getName() }}
-            </div>
-            <div class="detail-recipe">
-            {% if item.getProducedRecipes() is not empty %}
-                {% for recipe in item.getProducedRecipes() %}
-                    <div class="detail-recipe-ingredient">
-                    {% for ingredient in recipe.getIngredients() %}
-                        {{ ingredient.getIngredient().getName() }}
-                    {% endfor %}
-                    </div>
-                {% endfor %}
-            {% endif %}
-            </div>
-            <div class="detail-mystic-forge">
-                {% if item.getProducedMysticForges() is not empty %}
-                    {% for mysticForge in item.getProducedMysticForges() %}
-                        <div class="detail-mystic-forge-ingredient">
-                            {% for ingredient in mysticForge.getIngredients() %}
-                                {{ ingredient.getIngredient().getName() }}
+
+            <!-- Inhalt: Rezepte & Mystic Forge -->
+            <div class="detail-content">
+
+                {# Rezepte #}
+                {% if item.getProducedRecipes() is not empty %}
+                    <div class="detail-recipe">
+                        <h3>Recipe</h3>
+                        <div class="detail-recipe-list">
+                            {% for recipe in item.getProducedRecipes() %}
+                                <div class="detail-recipe-box">
+                                    {% for ingredient in recipe.getIngredients() %}
+                                        <div class="ingredient">
+                                            <img src="{{ ingredient.getIngredient().getPicUrl() }}"
+                                                 alt="{{ ingredient.getIngredient().getName() }} Icon"
+                                                 class="detail-item-icon">
+                                            <span>{{ ingredient.getIngredient().getName() }} ({{ ingredient.getQuantity() }}x)</span>
+                                        </div>
+                                    {% endfor %}
+                                </div>
                             {% endfor %}
                         </div>
-                    {% endfor %}
+                    </div>
+                {% endif %}
+
+                {# Mystic Forge #}
+                {% if item.getProducedMysticForges() is not empty %}
+                    <div class="detail-mystic-forge">
+                        <h3>Mystic Forge</h3>
+                        <div class="detail-recipe-list">
+                            {% for mysticForge in item.getProducedMysticForges() %}
+                                <div class="detail-recipe-box">
+                                    {% for ingredient in mysticForge.getIngredients() %}
+                                        <div class="ingredient">
+                                            <img src="{{ ingredient.getIngredientItem().getPicUrl() }}"
+                                                 alt="{{ ingredient.getIngredientItem().getName() }} Icon"
+                                                 class="detail-item-icon">
+                                            <span>{{ ingredient.getIngredientItem().getName() }} ({{ ingredient.getQuantity() }}x)</span>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
                 {% endif %}
             </div>
         </div>
