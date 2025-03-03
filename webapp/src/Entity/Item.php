@@ -34,8 +34,11 @@ class Item
     #[ORM\Column]
     private ?bool $sellable = null;
 
-    #[ORM\Column(type: Types::ARRAY, nullable: true)]
+    #[ORM\Column(nullable: true)]
     private ?array $attributes = null;
+
+    #[ORM\Column]
+    private ?bool $craftable = null;
 
     public function __construct()
     {
@@ -127,6 +130,27 @@ class Item
     public function setAttributes(?array $attributes): static
     {
         $this->attributes = $attributes;
+
+        return $this;
+    }
+
+    public function getAttributeName(): string
+    {
+        $attributeNames = [];
+        foreach ($this->getAttributes() as $attribute) {
+            $attributeNames[] = $attribute['attribute'];
+        }
+        return implode(', ', $attributeNames);
+    }
+
+    public function isCraftable(): ?bool
+    {
+        return $this->craftable;
+    }
+
+    public function setCraftable(bool $craftable): static
+    {
+        $this->craftable = $craftable;
 
         return $this;
     }

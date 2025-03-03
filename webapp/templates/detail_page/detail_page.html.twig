@@ -11,7 +11,6 @@
             <div class="detail-recipe">
             {% if item.getRecipes() is not empty %}
                 {% for recipe in item.getRecipes() %}
-                    {{ dump(recipe) }}
                     <div class="detail-ingredient">
                     {% for ingredient in recipe.getIngredients() %}
                         {{ ingredient.getIngredient().getName() }}

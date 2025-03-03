@@ -5,7 +5,6 @@ namespace App\Commands;
 use App\Entity\Recipes;
 use App\Entity\RecipeIngredients;
 use App\Entity\Item;
-use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -36,24 +35,20 @@ class UpdateRecipesCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        //TODO REZEPTE AKTUALISIEREN UND NICHT NEU IN DIE DB SCHREIBEN
         $output->writeln('Lese Rezepte aus der JSON-Datei...');
 
-        // Pfad zur JSON-Datei im public-Verzeichnis ermitteln
         $filePath = $this->kernel->getProjectDir() . '/public/json/' . self::RECIPE_JSON;
         if (!$this->filesystem->exists($filePath)) {
             $output->writeln(sprintf('<error>Datei %s existiert nicht.</error>', $filePath));
             return Command::FAILURE;
         }
 
-        // JSON-Inhalt einlesen
         $jsonContent = file_get_contents($filePath);
         if ($jsonContent === false) {
             $output->writeln(sprintf('<error>Fehler beim Auslesen der Datei %s.</error>', $filePath));
             return Command::FAILURE;
         }
 
-        // JSON-Daten als assoziatives Array dekodieren
         try {
             $data = $this->serializer->decode($jsonContent, 'json');
         } catch (\Exception $e) {
@@ -61,11 +56,9 @@ class UpdateRecipesCommand extends Command
             return Command::FAILURE;
         }
 
-        // Für jeden Rezept-Datensatz wird ein neues Recipe-Objekt angelegt
         foreach ($data as $recipeData) {
             $recipe = new Recipes();
 
-            // Output-Item laden und prüfen, ob es existiert
             $outputItem = $this->entityManager->getRepository(Item::class)
                 ->findOneBy(['gw2Id' => $recipeData['output_item_id']]);
 
@@ -77,9 +70,15 @@ class UpdateRecipesCommand extends Command
                 continue;
             }
 
-            if (isset($recipeData['gw2_id'])) $recipe->setGw2RecipeId($recipeData['gw2_id']);
+            if (isset($recipeData['gw2_id'])) {
+                $recipe->setGw2RecipeId($recipeData['gw2_id']);
+            }
 
             $recipe->setOutputItem($outputItem);
+            $outputItem->addRecipe($recipe);
+            $outputItem->setCraftable(true);
+
+
 
             if (isset($recipeData['ingredients']) && is_array($recipeData['ingredients'])) {
                 foreach ($recipeData['ingredients'] as $ingredientData) {
@@ -103,6 +102,17 @@ class UpdateRecipesCommand extends Command
             }
 
             $this->entityManager->persist($recipe);
+        }
+
+        $items = $this->entityManager->getRepository(Item::class)->createQueryBuilder('i')
+            ->where('i.craftable != :craftable')
+            ->setParameter('craftable', false)
+            ->getQuery()
+            ->getResult();
+
+        foreach ($items as $item) {
+            if (!$item instanceof Item) continue;
+            $item->setCraftable(false);
         }
 
         $this->entityManager->flush();

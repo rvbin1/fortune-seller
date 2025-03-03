@@ -19,6 +19,11 @@
                                         {{ item.name }}
                                     </a>
                                 </div>
+                                <div class="item-attributes">
+                                    {% if item.getAttributeName() is not empty %}
+                                        Attributes: {{ item.getAttributeName() }}
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
                     {% endfor %}

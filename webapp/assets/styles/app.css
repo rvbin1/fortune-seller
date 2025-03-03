@@ -1,6 +1,7 @@
 @import url("header/header.css");
 @import url("body/searchForm.css");
 @import url("home_page/itemList.css");
+@import url("detail_page/detail_item.css");
 
 body{
     height: 100vh;

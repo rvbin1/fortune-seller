@@ -59,6 +59,7 @@ class UpdateItemsCommand extends Command
         }
         foreach ($items as $item) {
             $this->entityManager->persist($item);
+            $item->setCraftable(false);
         }
         $this->entityManager->flush();
 
