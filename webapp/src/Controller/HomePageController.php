@@ -31,6 +31,9 @@ final class HomePageController extends AbstractController
             return $this->redirectToRoute('app_home_page', [
                 'page'  => 1,
                 'query' => $searchFormData['query'],
+                'crafting' => $searchFormData['crafting'],
+                'selling' => $searchFormData['selling'],
+                'converting' => $searchFormData['converting'],
             ]);
         }
 

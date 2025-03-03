@@ -15,15 +15,20 @@ class Recipes
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(targetEntity: Item::class, inversedBy: 'recipes')]
+    #[ORM\ManyToOne(targetEntity: Item::class, inversedBy: 'producedRecipes')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Item $outputItem = null;
 
-    #[ORM\OneToMany(targetEntity: RecipeIngredients::class, mappedBy: 'recipe', cascade: ['persist', 'remove'])]
+    /**
+     * Zutaten der Rezeptur.
+     *
+     * @var Collection<int, RecipeIngredients>
+     */
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredients::class, cascade: ['persist', 'remove'])]
     private Collection $ingredients;
 
     #[ORM\Column]
-    private ?int $gw2_recipe_id = null;
+    private ?int $gw2RecipeId = null;
 
     public function __construct()
     {
@@ -66,7 +71,6 @@ class Recipes
     public function removeIngredient(RecipeIngredients $ingredient): self
     {
         if ($this->ingredients->removeElement($ingredient)) {
-            // Setze die Beziehung auf null, falls notwendig
             if ($ingredient->getRecipe() === $this) {
                 $ingredient->setRecipe(null);
             }
@@ -76,13 +80,12 @@ class Recipes
 
     public function getGw2RecipeId(): ?int
     {
-        return $this->gw2_recipe_id;
+        return $this->gw2RecipeId;
     }
 
-    public function setGw2RecipeId(int $gw2_recipe_id): static
+    public function setGw2RecipeId(int $gw2RecipeId): self
     {
-        $this->gw2_recipe_id = $gw2_recipe_id;
-
+        $this->gw2RecipeId = $gw2RecipeId;
         return $this;
     }
 }

@@ -14,7 +14,16 @@
                                 </div>
                             {% endif %}
                             <div class="item-details">
-                                <div class="item-name">{{ item.name }}</div>
+                                <div class="item-name">
+                                    <a href="{{ path('app_detail_page', {'id': item.id}) }}">
+                                        {{ item.name }}
+                                    </a>
+                                </div>
+                                <div class="item-attributes">
+                                    {% if item.getAttributeNames() is not empty %}
+                                        Attributes: {{ item.getAttributeNames() }}
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
                     {% endfor %}
