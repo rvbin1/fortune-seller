@@ -8,9 +8,6 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\Serializer\SerializerInterface;
-use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 #[AsCommand(name: 'update:prices')]
@@ -18,9 +15,7 @@ class GetSellPricesCommand extends Command
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly SerializerInterface $serializer,
-        private readonly KernelInterface $kernel,
-        private HttpClientInterface $client,
+        private readonly HttpClientInterface    $client,
     ) {
         parent::__construct();
     }
@@ -29,9 +24,13 @@ class GetSellPricesCommand extends Command
     {
         $this->setDescription('Ruft die Verkaufsdaten aus der API von GW2 und gibt diese aus.');
     }
+
+    /**
+     * @param array<int, Item> $items
+     * @return array<int, Array> $allresults
+     */
     public function fetchSellInformation(array $items): array
     {
-        // Teile die Items in Chunks von 199 Elementen
         $chunkedItems = array_chunk($items, 199);
         $allResults = [];
 
@@ -47,14 +46,11 @@ class GetSellPricesCommand extends Command
                 continue;
             }
 
-            // Baue die URL mit den IDs des aktuellen Chunks
             $url = "https://api.guildwars2.com/v2/commerce/prices?ids=" . implode(',', $ids);
 
-            // Sende den Request
             $response = $this->client->request('GET', $url);
             $content = $response->getContent();
 
-            // Dekodiere das Ergebnis und füge es zusammen
             $results = json_decode($content, true);
             if (is_array($results)) {
                 $allResults = array_merge($allResults, $results);

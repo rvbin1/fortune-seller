@@ -13,7 +13,7 @@ class Item
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private int $id;
 
     #[ORM\Column]
     private ?int $gw2Id = null;
@@ -219,9 +219,6 @@ class Item
         return $this;
     }
 
-    /**
-     * Gibt eine durch Komma getrennte Liste der Attributnamen zurück.
-     */
     public function getAttributeNames(): string
     {
         $attributeNames = [];
