@@ -19,23 +19,52 @@ class Item
     private ?int $gw2Id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $pic_url = null;
+    private ?string $picUrl = null;
 
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
     /**
+     * Rezepte, bei denen dieses Item das Ergebnis ist.
+     *
      * @var Collection<int, Recipes>
      */
-    #[ORM\OneToMany(targetEntity: Recipes::class, mappedBy: 'outputItem')]
-    private Collection $recipes;
+    #[ORM\OneToMany(mappedBy: 'outputItem', targetEntity: Recipes::class)]
+    private Collection $producedRecipes;
 
     #[ORM\Column]
     private ?bool $sellable = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?array $attributes = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $craftable = null;
+
+    /**
+     * Mystic-Forges, die dieses Item als Ergebnis produzieren.
+     *
+     * @var Collection<int, MysticForge>
+     */
+    #[ORM\OneToMany(mappedBy: 'outputItem', targetEntity: MysticForge::class)]
+    private Collection $producedMysticForges;
+
+    /**
+     * Mystic-Forging-Zusatzinformationen, in denen dieses Item als Zutat genutzt wird.
+     *
+     * @var Collection<int, MysticForgeIngredients>
+     */
+    #[ORM\OneToMany(mappedBy: 'ingredientItem', targetEntity: MysticForgeIngredients::class)]
+    private Collection $usedInMysticForgeIngredients;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $price = null;
+
     public function __construct()
     {
-        $this->recipes = new ArrayCollection();
+        $this->producedRecipes = new ArrayCollection();
+        $this->producedMysticForges = new ArrayCollection();
+        $this->usedInMysticForgeIngredients = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -56,12 +85,12 @@ class Item
 
     public function getPicUrl(): ?string
     {
-        return $this->pic_url;
+        return $this->picUrl;
     }
 
-    public function setPicUrl(?string $pic_url): self
+    public function setPicUrl(?string $picUrl): self
     {
-        $this->pic_url = $pic_url;
+        $this->picUrl = $picUrl;
         return $this;
     }
 
@@ -79,23 +108,23 @@ class Item
     /**
      * @return Collection<int, Recipes>
      */
-    public function getRecipes(): Collection
+    public function getProducedRecipes(): Collection
     {
-        return $this->recipes;
+        return $this->producedRecipes;
     }
 
-    public function addRecipe(Recipes $recipe): self
+    public function addProducedRecipe(Recipes $recipe): self
     {
-        if (!$this->recipes->contains($recipe)) {
-            $this->recipes->add($recipe);
+        if (!$this->producedRecipes->contains($recipe)) {
+            $this->producedRecipes->add($recipe);
             $recipe->setOutputItem($this);
         }
         return $this;
     }
 
-    public function removeRecipe(Recipes $recipe): self
+    public function removeProducedRecipe(Recipes $recipe): self
     {
-        if ($this->recipes->removeElement($recipe)) {
+        if ($this->producedRecipes->removeElement($recipe)) {
             if ($recipe->getOutputItem() === $this) {
                 $recipe->setOutputItem(null);
             }
@@ -108,9 +137,108 @@ class Item
         return $this->sellable;
     }
 
-    public function setSellable(bool $sellable): static
+    public function setSellable(bool $sellable): self
     {
         $this->sellable = $sellable;
+        return $this;
+    }
+
+    public function getAttributes(): ?array
+    {
+        return $this->attributes;
+    }
+
+    public function setAttributes(?array $attributes): self
+    {
+        $this->attributes = $attributes;
+        return $this;
+    }
+
+    public function isCraftable(): ?bool
+    {
+        return $this->craftable;
+    }
+
+    public function setCraftable(?bool $craftable): self
+    {
+        $this->craftable = $craftable;
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, MysticForge>
+     */
+    public function getProducedMysticForges(): Collection
+    {
+        return $this->producedMysticForges;
+    }
+
+    public function addProducedMysticForge(MysticForge $mysticForge): self
+    {
+        if (!$this->producedMysticForges->contains($mysticForge)) {
+            $this->producedMysticForges->add($mysticForge);
+            $mysticForge->setOutputItem($this);
+        }
+        return $this;
+    }
+
+    public function removeProducedMysticForge(MysticForge $mysticForge): self
+    {
+        if ($this->producedMysticForges->removeElement($mysticForge)) {
+            if ($mysticForge->getOutputItem() === $this) {
+                $mysticForge->setOutputItem(null);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, MysticForgeIngredients>
+     */
+    public function getUsedInMysticForgeIngredients(): Collection
+    {
+        return $this->usedInMysticForgeIngredients;
+    }
+
+    public function addUsedInMysticForgeIngredient(MysticForgeIngredients $ingredient): self
+    {
+        if (!$this->usedInMysticForgeIngredients->contains($ingredient)) {
+            $this->usedInMysticForgeIngredients->add($ingredient);
+            $ingredient->setIngredientItem($this);
+        }
+        return $this;
+    }
+
+    public function removeUsedInMysticForgeIngredient(MysticForgeIngredients $ingredient): self
+    {
+        if ($this->usedInMysticForgeIngredients->removeElement($ingredient)) {
+            if ($ingredient->getIngredientItem() === $this) {
+                $ingredient->setIngredientItem(null);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Gibt eine durch Komma getrennte Liste der Attributnamen zurück.
+     */
+    public function getAttributeNames(): string
+    {
+        $attributeNames = [];
+        foreach ($this->getAttributes() as $attribute) {
+            $attributeNames[] = $attribute['attribute'];
+        }
+        return implode(', ', $attributeNames);
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?int $price): static
+    {
+        $this->price = $price;
 
         return $this;
     }
