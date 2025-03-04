@@ -60,6 +60,31 @@ class GetSellPricesCommand extends Command
                 $allResults = array_merge($allResults, $results);
             }
         }
+
+        /* keine Ahnung wo das hingehört
+        switch (strlen($number)) {
+            case 1:
+                $result = array(int($number));
+                break;
+            case 2:
+                $result = array(int($number));
+                break;
+            case 3:
+                $result = array(int(substr($number, 0, 1)), int(substr($number, 1, 2)));
+                break;
+            case 4:
+                $result = array(int(substr($number, 0, 2)), int(substr($number, 2, 2)));
+                break;
+            case 5:
+                $result = array(int(substr($number, 0, 1)), int(substr($number, 1, 2)), int(substr($number, 3, 2)));
+                break;
+            case 6:
+                $result = array(int(substr($number, 0, 2)), int(substr($number, 2, 2)), int(substr($number, 4, 2)));
+                break;
+        }
+        */
+
+
         return $allResults;
     }
     protected function execute(InputInterface $input, OutputInterface $output): int
