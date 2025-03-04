@@ -11,6 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 #[AsCommand(name: 'update:prices')]
 class GetSellPricesCommand extends Command
@@ -30,24 +31,77 @@ class GetSellPricesCommand extends Command
     }
     public function fetchSellInformation(array $items): array
     {
-        # to build the url for the api call
-        $url = "https://api.guildwars2.com/v2/commerce/prices?ids=";
-        foreach ($items as $id) {
-            $url = $url . $id . ",";
-        };
+        // Teile die Items in Chunks von 199 Elementen
+        $chunkedItems = array_chunk($items, 199);
+        $allResults = [];
 
-        # to remove the trailing ,
-        $url = strrev($url);
-        $url = substr($url, 1);
-        $url = strrev($url);
+        foreach ($chunkedItems as $chunk) {
+            $ids = [];
+            foreach ($chunk as $item) {
+                if (!$item instanceof Item) {
+                    continue;
+                }
+                $ids[] = $item->getGw2Id();
+            }
+            if (empty($ids)) {
+                continue;
+            }
 
-        $response = $this->client->request(
-            'GET',
-            $url
-        );
+            // Baue die URL mit den IDs des aktuellen Chunks
+            $url = "https://api.guildwars2.com/v2/commerce/prices?ids=" . implode(',', $ids);
 
-        $content = $response->getContent();
+            // Sende den Request
+            $response = $this->client->request('GET', $url);
+            $content = $response->getContent();
 
-        return $content;
+            // Dekodiere das Ergebnis und füge es zusammen
+            $results = json_decode($content, true);
+            if (is_array($results)) {
+                $allResults = array_merge($allResults, $results);
+            }
+        }
+        return $allResults;
+    }
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $items = $this->entityManager->getRepository(Item::class)
+            ->createQueryBuilder('i')
+            ->where('i.sellable = :sellable')
+            ->setParameter('sellable', true)
+            ->getQuery()
+            ->getResult();
+
+        $sellData = $this->fetchSellInformation($items);
+
+        $sellDataById = [];
+        foreach ($sellData as $priceInfo) {
+            $sellDataById[(int) $priceInfo['id']] = $priceInfo;
+        }
+
+        foreach ($items as $item) {
+            if (!$item instanceof Item) {
+                continue;
+            }
+            $gw2Id = (int) $item->getGw2Id();
+            if (isset($sellDataById[$gw2Id])) {
+                $item->setPrice(round( $sellDataById[$gw2Id]['buys']['unit_price'] * 0.9, 0, PHP_ROUND_HALF_UP));
+            }
+        }
+
+        $notSellableItems = $this->entityManager->getRepository(Item::class)
+            ->createQueryBuilder('i')
+            ->where('i.sellable = :sellable')
+            ->setParameter('sellable', false)
+            ->getQuery()
+            ->getResult();
+
+        foreach ($notSellableItems as $notSellableItem) {
+            if (!$notSellableItem instanceof Item) continue;
+            $notSellableItem->setPrice(null);
+        }
+
+        $this->entityManager->flush();
+
+        return Command::SUCCESS;
     }
 }
