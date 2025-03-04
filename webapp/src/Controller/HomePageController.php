@@ -32,8 +32,7 @@ final class HomePageController extends AbstractController
                 'page'  => 1,
                 'query' => $searchFormData['query'],
                 'crafting' => $searchFormData['crafting'],
-                'selling' => $searchFormData['selling'],
-                'converting' => $searchFormData['converting'],
+                'mysticForge' => $searchFormData['mysticForge'],
             ]);
         }
 

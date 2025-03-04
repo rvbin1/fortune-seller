@@ -16,7 +16,7 @@
                             <div class="item-details">
                                 <div class="item-name">
                                     <a href="{{ path('app_detail_page', {'id': item.id}) }}">
-                                        {{ item.name }}
+                                        {{ item.name }} ({{ item.getPrice()}} Gold)
                                     </a>
                                 </div>
                                 <div class="item-attributes">

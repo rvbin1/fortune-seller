@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20250303203219 extends AbstractMigration
+final class Version20250304093436 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,12 +20,12 @@ final class Version20250303203219 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE item ADD price INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE item CHANGE price price DOUBLE PRECISION DEFAULT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE item DROP price');
+        $this->addSql('ALTER TABLE item CHANGE price price INT DEFAULT NULL');
     }
 }

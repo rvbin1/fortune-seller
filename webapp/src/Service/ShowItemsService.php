@@ -42,6 +42,7 @@ class ShowItemsService
             $query->andWhere("regexp(i.name, :falseItemRegex) = 0")
                 ->setParameter("falseItemRegex", $falseItemRegex);
         }
+        $query->orderBy('i.price', 'DESC');
 
         $query->getQuery();
 

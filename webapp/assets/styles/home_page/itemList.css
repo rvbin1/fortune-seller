@@ -38,7 +38,6 @@
     font-weight: bold;
 }
 
-/* Pagination zentriert und mit ausreichend Abstand */
 .pagination {
     display: flex;
     justify-content: center;

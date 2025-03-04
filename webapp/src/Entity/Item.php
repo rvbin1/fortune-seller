@@ -57,14 +57,26 @@ class Item
     #[ORM\OneToMany(mappedBy: 'ingredientItem', targetEntity: MysticForgeIngredients::class)]
     private Collection $usedInMysticForgeIngredients;
 
+    /**
+     * Rezepte, in denen dieses Item als Zutat genutzt wird.
+     *
+     * @var Collection<int, RecipeIngredients>
+     */
+    #[ORM\OneToMany(mappedBy: 'ingredient', targetEntity: RecipeIngredients::class)]
+    private Collection $usedInRecipeIngredients;
+
     #[ORM\Column(nullable: true)]
-    private ?int $price = null;
+    private ?float $price = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $priceUnit = null;
 
     public function __construct()
     {
         $this->producedRecipes = new ArrayCollection();
         $this->producedMysticForges = new ArrayCollection();
         $this->usedInMysticForgeIngredients = new ArrayCollection();
+        $this->usedInRecipeIngredients = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -220,6 +232,39 @@ class Item
     }
 
     /**
+     * @return Collection<int, RecipeIngredients>
+     */
+    public function getUsedInRecipeIngredients(): Collection
+    {
+        return $this->usedInRecipeIngredients;
+    }
+
+    public function addUsedInRecipeIngredient(RecipeIngredients $ingredient): self
+    {
+        if (!$this->usedInRecipeIngredients->contains($ingredient)) {
+            $this->usedInRecipeIngredients->add($ingredient);
+        }
+        return $this;
+    }
+
+    public function removeUsedInRecipeIngredient(RecipeIngredients $ingredient): self
+    {
+        $this->usedInRecipeIngredients->removeElement($ingredient);
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?float $price): self
+    {
+        $this->price = $price;
+        return $this;
+    }
+
+    /**
      * Gibt eine durch Komma getrennte Liste der Attributnamen zurück.
      */
     public function getAttributeNames(): string
@@ -231,14 +276,14 @@ class Item
         return implode(', ', $attributeNames);
     }
 
-    public function getPrice(): ?int
+    public function getPriceUnit(): ?string
     {
-        return $this->price;
+        return $this->priceUnit;
     }
 
-    public function setPrice(?int $price): static
+    public function setPriceUnit(?string $priceUnit): static
     {
-        $this->price = $price;
+        $this->priceUnit = $priceUnit;
 
         return $this;
     }
