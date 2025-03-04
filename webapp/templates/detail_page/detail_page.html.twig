@@ -16,7 +16,7 @@
         <div class="detail-content">
             {% if usedRecipes is not empty %}
                 <div class="detail-used-in-recipe">
-                    <h3>Verwendet in Rezepten</h3>
+                    <h3>Wird in folgenden Rezepten verwendet</h3>
                     <div class="detail-recipe-list">
                         {% for recipe in usedRecipes %}
                             <div class="detail-recipe-box">
@@ -40,7 +40,7 @@
 
             {% if usedMysticRecipes is not empty %}
                 <div class="detail-used-in-mystic">
-                    <h3>Verwendet in Mystic Forge Rezepten</h3>
+                    <h3>Wird in folgenden Mystic Forge Rezepten verwendet</h3>
                     <div class="detail-recipe-list">
                         {% for mysticForge in usedMysticRecipes %}
                             <div class="detail-recipe-box">
@@ -60,6 +60,10 @@
                         {% endfor %}
                     </div>
                 </div>
+            {% endif %}
+
+            {% if usedMysticRecipes is empty and usedRecipes is empty %}
+                <h3>No Recipe / Mystic Forge contains this item.</h3>
             {% endif %}
         </div>
     </div>

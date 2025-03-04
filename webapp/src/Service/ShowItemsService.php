@@ -25,7 +25,6 @@ class ShowItemsService
             ->setFirstResult(($page - 1) * self::ITEMS_PER_PAGE)
             ->setMaxResults(self::ITEMS_PER_PAGE)
             ->where("i.sellable = 1")
-            ->andWhere("i.craftable = 1")
             ->andWhere("i.name IS NOT NULL")
             ->andWhere("i.name <> ''");
 

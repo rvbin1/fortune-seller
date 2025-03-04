@@ -16,12 +16,10 @@ class GetItemDataService
         /** @var Item $item */
         $item = $this->em->getRepository(Item::class)->find($id);
 
-        // Verarbeite "normale" Rezepte
         $usedRecipes = [];
         foreach ($item->getUsedInRecipeIngredients() as $recipeIngredient) {
             $recipe = $recipeIngredient->getRecipe();
             if ($recipe->getOutputItem()->getPrice() > 0) {
-                // Über Deduplizierung anhand der ID
                 $usedRecipes[$recipe->getId()] = $recipe;
             }
         }
@@ -30,7 +28,6 @@ class GetItemDataService
             return $b->getOutputItem()->getPrice() <=> $a->getOutputItem()->getPrice();
         });
 
-        // Verarbeite Mystic Forge Rezepte
         $usedMysticRecipes = [];
         foreach ($item->getUsedInMysticForgeIngredients() as $usedIngredient) {
             $mysticForge = $usedIngredient->getMysticForge();

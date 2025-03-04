@@ -68,6 +68,9 @@ class Item
     #[ORM\Column(nullable: true)]
     private ?float $price = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $priceUnit = null;
+
     public function __construct()
     {
         $this->producedRecipes = new ArrayCollection();
@@ -271,5 +274,17 @@ class Item
             $attributeNames[] = $attribute['attribute'];
         }
         return implode(', ', $attributeNames);
+    }
+
+    public function getPriceUnit(): ?string
+    {
+        return $this->priceUnit;
+    }
+
+    public function setPriceUnit(?string $priceUnit): static
+    {
+        $this->priceUnit = $priceUnit;
+
+        return $this;
     }
 }
