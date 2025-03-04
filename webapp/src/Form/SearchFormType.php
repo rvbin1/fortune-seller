@@ -32,12 +32,8 @@ class SearchFormType extends AbstractType
                 'label' => "Crafting",
                 'required' => false,
             ])
-            ->add('selling', CheckboxType::class, [
-                'label' => 'Selling',
-                'required' => false,
-            ])
-            ->add('converting', CheckboxType::class, [
-                'label' => 'Convert',
+            ->add('mysticForge', CheckboxType::class, [
+                'label' => 'Mystic Forge',
                 'required' => false,
             ]);
     }

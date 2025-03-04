@@ -84,7 +84,8 @@ class GetSellPricesCommand extends Command
             }
             $gw2Id = (int) $item->getGw2Id();
             if (isset($sellDataById[$gw2Id])) {
-                $item->setPrice(round( $sellDataById[$gw2Id]['buys']['unit_price'] * 0.9, 0, PHP_ROUND_HALF_UP));
+                $goldPrice = round( ($sellDataById[$gw2Id]['buys']['unit_price'] * 0.9) / 10000, 5, PHP_ROUND_HALF_UP);
+                $item->setPrice($goldPrice);
             }
         }
 
