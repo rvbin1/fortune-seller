@@ -10,7 +10,7 @@
         <div class="detail-header">
             <img src="{{ item.getPicUrl() }}" alt="{{ item.getName() }} Icon" class="detail-item-icon">
             <div class="detail-item-info">
-                <h2>{{ item.getName() }} ({{ item.getPrice() }} Gold)</h2>
+                <h2>{{ item.getName() }} ({{ item.getConvertedPrice() }})</h2>
             </div>
         </div>
         <div class="detail-content">
@@ -22,7 +22,7 @@
                             <div class="detail-recipe-box">
                                 <div class="detail-recipe-box-header">
                                     <img src="{{ recipe.getOutputItem().getPicUrl() }}" alt="{{ recipe.getOutputItem().getName() }} Icon" class="detail-item-icon">
-                                    <h4>{{ recipe.getOutputItem().getName() }} ({{ recipe.getOutputItem().getPrice() }} Gold)</h4>
+                                    <h4>{{ recipe.getOutputItem().getName() }} ({{ recipe.getOutputItem().getConvertedPrice() }})</h4>
                                 </div>
                                 <div class="ingredients">
                                     {% for ingredient in recipe.getIngredients() %}
@@ -46,7 +46,7 @@
                             <div class="detail-recipe-box">
                                 <div class="detail-recipe-box-header">
                                     <img src="{{ mysticForge.getOutputItem().getPicUrl() }}" alt="{{ mysticForge.getOutputItem().getName() }} Icon" class="detail-item-icon">
-                                    <h4>{{ mysticForge.getOutputItem().getName() }} ({{ mysticForge.getOutputItem().getPrice() }} Gold)</h4>
+                                    <h4>{{ mysticForge.getOutputItem().getName() }} ({{ mysticForge.getOutputItem().getConvertedPrice() }})</h4>
                                 </div>
                                 <div class="ingredients">
                                     {% for ingredient in mysticForge.getIngredients() %}

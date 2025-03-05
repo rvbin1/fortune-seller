@@ -16,10 +16,11 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 #[AsCommand(name: 'update:prices')]
 class GetSellPricesCommand extends Command
 {
+    private const COPPER = 'copper';
+    private const SILVER = 'silver';
+    private const GOLD = 'gold';
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly SerializerInterface $serializer,
-        private readonly KernelInterface $kernel,
         private HttpClientInterface $client,
     ) {
         parent::__construct();
@@ -61,30 +62,6 @@ class GetSellPricesCommand extends Command
             }
         }
 
-        /* keine Ahnung wo das hingehört
-        switch (strlen($number)) {
-            case 1:
-                $result = array(int($number));
-                break;
-            case 2:
-                $result = array(int($number));
-                break;
-            case 3:
-                $result = array(int(substr($number, 0, 1)), int(substr($number, 1, 2)));
-                break;
-            case 4:
-                $result = array(int(substr($number, 0, 2)), int(substr($number, 2, 2)));
-                break;
-            case 5:
-                $result = array(int(substr($number, 0, 1)), int(substr($number, 1, 2)), int(substr($number, 3, 2)));
-                break;
-            case 6:
-                $result = array(int(substr($number, 0, 2)), int(substr($number, 2, 2)), int(substr($number, 4, 2)));
-                break;
-        }
-        */
-
-
         return $allResults;
     }
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -109,7 +86,7 @@ class GetSellPricesCommand extends Command
             }
             $gw2Id = (int) $item->getGw2Id();
             if (isset($sellDataById[$gw2Id])) {
-                $goldPrice = round( ($sellDataById[$gw2Id]['buys']['unit_price'] * 0.9) / 10000, 5, PHP_ROUND_HALF_UP);
+                $goldPrice = round( ($sellDataById[$gw2Id]['buys']['unit_price'] * 0.9), 0, PHP_ROUND_HALF_UP);
                 $item->setPrice($goldPrice);
             }
         }
