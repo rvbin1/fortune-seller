@@ -11,39 +11,41 @@ class GetItemDataService
     {
     }
 
-    public function getItemData(int $id): array
+    public function getItemData(int $id, ?bool $craftingBool, ?bool $mysticForgeBool): array
     {
         /** @var Item $item */
         $item = $this->em->getRepository(Item::class)->find($id);
+        if (!$item) {
+            return ['error' => 'Item not found'];
+        }
 
         $usedRecipes = [];
         foreach ($item->getUsedInRecipeIngredients() as $recipeIngredient) {
             $recipe = $recipeIngredient->getRecipe();
-            if ($recipe->getOutputItem()->getPrice() > 0) {
+            if ($recipe && $recipe->getOutputItem() && $recipe->getOutputItem()->getPrice() > 0) {
                 $usedRecipes[$recipe->getId()] = $recipe;
             }
         }
         $usedRecipes = array_values($usedRecipes);
-        usort($usedRecipes, function($a, $b) {
-            return $b->getOutputItem()->getPrice() <=> $a->getOutputItem()->getPrice();
-        });
+        usort($usedRecipes, fn($a, $b) => $b->getOutputItem()->getPrice() <=> $a->getOutputItem()->getPrice());
 
         $usedMysticRecipes = [];
         foreach ($item->getUsedInMysticForgeIngredients() as $usedIngredient) {
             $mysticForge = $usedIngredient->getMysticForge();
-            if ($mysticForge->getOutputItem()->getPrice() > 0) {
+            if ($mysticForge && $mysticForge->getOutputItem() && $mysticForge->getOutputItem()->getPrice() >= 0) {
                 $usedMysticRecipes[$mysticForge->getId()] = $mysticForge;
             }
         }
         $usedMysticRecipes = array_values($usedMysticRecipes);
-        usort($usedMysticRecipes, function($a, $b) {
-            return $b->getOutputItem()->getPrice() <=> $a->getOutputItem()->getPrice();
-        });
+        usort($usedMysticRecipes, fn($a, $b) => $b->getOutputItem()->getPrice() <=> $a->getOutputItem()->getPrice());
 
-        return [
-            'item'              => $item,
-            'usedRecipes'       => $usedRecipes,
-            'usedMysticRecipes' => $usedMysticRecipes,
-        ];
+        $result = ['item' => $item];
+
+        $result['usedRecipes'] = $usedRecipes;
+        $result['usedMysticRecipes'] = $usedMysticRecipes;
+        $result['crafting'] = $craftingBool;
+        $result['mysticForge'] = $mysticForgeBool;
+
+        return $result;
     }
 }

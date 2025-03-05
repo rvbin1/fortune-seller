@@ -18,7 +18,7 @@ class ShowItemsService
        $this->falseItemRegex = ["^\\(\\([0-9]+\\)\\)$", "^\\[\\[[0-9]+\\]\\]$"];
     }
 
-    public function showItemsPaginated(int $page, ?string $searchString = null): array
+    public function showItemsPaginated(int $page, ?string $searchString = null, ?bool $crafting = null, ?bool $mysticForge = null): array
     {
         $query = $this->em->getRepository(Item::class)
             ->createQueryBuilder('i')
