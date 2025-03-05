@@ -15,8 +15,12 @@
                             {% endif %}
                             <div class="item-details">
                                 <div class="item-name">
-                                    <a href="{{ path('app_detail_page', {'id': item.id}) }}">
-                                        {{ item.name }} ({{ item.getPrice()}} Gold)
+                                    <a href="{{ path('app_detail_page', {
+                                        'id': item.id,
+                                        'crafting': app.request.get('crafting'),
+                                        'mysticForge': app.request.get('mysticForge')
+                                    }) }}">
+                                        {{ item.name }} ({{ item.getConvertedPrice() }})
                                     </a>
                                 </div>
                                 <div class="item-attributes">

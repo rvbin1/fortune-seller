@@ -1,4 +1,3 @@
-{# templates/detail_page/detail_page.html.twig #}
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
@@ -10,60 +9,77 @@
         <div class="detail-header">
             <img src="{{ item.getPicUrl() }}" alt="{{ item.getName() }} Icon" class="detail-item-icon">
             <div class="detail-item-info">
-                <h2>{{ item.getName() }} ({{ item.getPrice() }} Gold)</h2>
+                <h2>{{ item.getName() }} ({{ item.getConvertedPrice() }})</h2>
             </div>
         </div>
         <div class="detail-content">
-            {% if usedRecipes is not empty %}
-                <div class="detail-used-in-recipe">
-                    <h3>Wird in folgenden Rezepten verwendet</h3>
-                    <div class="detail-recipe-list">
-                        {% for recipe in usedRecipes %}
-                            <div class="detail-recipe-box">
-                                <div class="detail-recipe-box-header">
-                                    <img src="{{ recipe.getOutputItem().getPicUrl() }}" alt="{{ recipe.getOutputItem().getName() }} Icon" class="detail-item-icon">
-                                    <h4>{{ recipe.getOutputItem().getName() }} ({{ recipe.getOutputItem().getPrice() }} Gold)</h4>
+            {% if crafting or (not crafting and not mysticForge) %}
+                {% if usedRecipes is not empty %}
+                    <div class="detail-used-in-recipe">
+                        <h3>Item is used in following crafting recipes:</h3>
+                        <div class="detail-recipe-list">
+                            {% for recipe in usedRecipes %}
+                                <div class="detail-recipe-box">
+                                    <div class="detail-recipe-box-header">
+                                        <img src="{{ recipe.getOutputItem().getPicUrl() }}"
+                                             alt="{{ recipe.getOutputItem().getName() }} Icon" class="detail-item-icon">
+                                        <h4>{{ recipe.getOutputItem().getName() }}
+                                            ({{ recipe.getOutputItem().getConvertedPrice() }})</h4>
+                                    </div>
+                                    <div class="ingredients">
+                                        {% for ingredient in recipe.getIngredients() %}
+                                            <div class="ingredient">
+                                                <img src="{{ ingredient.getIngredient().getPicUrl() }}"
+                                                     alt="{{ ingredient.getIngredient().getName() }} Icon"
+                                                     class="detail-item-icon">
+                                                <span>{{ ingredient.getIngredient().getName() }} ({{ ingredient.getQuantity() }}x)</span>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
                                 </div>
-                                <div class="ingredients">
-                                    {% for ingredient in recipe.getIngredients() %}
-                                        <div class="ingredient">
-                                            <img src="{{ ingredient.getIngredient().getPicUrl() }}" alt="{{ ingredient.getIngredient().getName() }} Icon" class="detail-item-icon">
-                                            <span>{{ ingredient.getIngredient().getName() }} ({{ ingredient.getQuantity() }}x)</span>
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
+                {% else %}
+                    <h4>There are no crafting recipes that contain this item.</h4>
+                {% endif %}
             {% endif %}
 
-            {% if usedMysticRecipes is not empty %}
-                <div class="detail-used-in-mystic">
-                    <h3>Wird in folgenden Mystic Forge Rezepten verwendet</h3>
-                    <div class="detail-recipe-list">
-                        {% for mysticForge in usedMysticRecipes %}
-                            <div class="detail-recipe-box">
-                                <div class="detail-recipe-box-header">
-                                    <img src="{{ mysticForge.getOutputItem().getPicUrl() }}" alt="{{ mysticForge.getOutputItem().getName() }} Icon" class="detail-item-icon">
-                                    <h4>{{ mysticForge.getOutputItem().getName() }} ({{ mysticForge.getOutputItem().getPrice() }} Gold)</h4>
+            {% if mysticForge or (not mysticForge and not crafting) %}
+                {% if usedMysticRecipes is not empty %}
+                    <div class="detail-used-in-mystic">
+                        <h3>Item is used in following mystic forges:</h3>
+                        <div class="detail-recipe-list">
+                            {% for mysticForge in usedMysticRecipes %}
+                                <div class="detail-recipe-box">
+                                    <div class="detail-recipe-box-header">
+                                        <img src="{{ mysticForge.getOutputItem().getPicUrl() }}"
+                                             alt="{{ mysticForge.getOutputItem().getName() }} Icon"
+                                             class="detail-item-icon">
+                                        <h4>{{ mysticForge.getOutputItem().getName() }}
+                                            ({{ mysticForge.getOutputItem().getConvertedPrice() }})</h4>
+                                    </div>
+                                    <div class="ingredients">
+                                        {% for ingredient in mysticForge.getIngredients() %}
+                                            <div class="ingredient">
+                                                <img src="{{ ingredient.getIngredientItem().getPicUrl() }}"
+                                                     alt="{{ ingredient.getIngredientItem().getName() }} Icon"
+                                                     class="detail-item-icon">
+                                                <span>{{ ingredient.getIngredientItem().getName() }} ({{ ingredient.getQuantity() }}x)</span>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
                                 </div>
-                                <div class="ingredients">
-                                    {% for ingredient in mysticForge.getIngredients() %}
-                                        <div class="ingredient">
-                                            <img src="{{ ingredient.getIngredientItem().getPicUrl() }}" alt="{{ ingredient.getIngredientItem().getName() }} Icon" class="detail-item-icon">
-                                            <span>{{ ingredient.getIngredientItem().getName() }} ({{ ingredient.getQuantity() }}x)</span>
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
+                {% else %}
+                    <h4>There are no mystic forges that contain this item.</h4>
+                {% endif %}
             {% endif %}
 
             {% if usedMysticRecipes is empty and usedRecipes is empty %}
-                <h3>No Recipe / Mystic Forge contains this item.</h3>
+                <h3>No crafting recipe or mystic forge contains this item.</h3>
             {% endif %}
         </div>
     </div>
