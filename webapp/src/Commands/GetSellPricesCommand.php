@@ -16,10 +16,11 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 #[AsCommand(name: 'update:prices')]
 class GetSellPricesCommand extends Command
 {
+    private const COPPER = 'copper';
+    private const SILVER = 'silver';
+    private const GOLD = 'gold';
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly SerializerInterface $serializer,
-        private readonly KernelInterface $kernel,
         private HttpClientInterface $client,
     ) {
         parent::__construct();
@@ -60,6 +61,7 @@ class GetSellPricesCommand extends Command
                 $allResults = array_merge($allResults, $results);
             }
         }
+
         return $allResults;
     }
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -84,7 +86,7 @@ class GetSellPricesCommand extends Command
             }
             $gw2Id = (int) $item->getGw2Id();
             if (isset($sellDataById[$gw2Id])) {
-                $goldPrice = round( ($sellDataById[$gw2Id]['buys']['unit_price'] * 0.9) / 10000, 5, PHP_ROUND_HALF_UP);
+                $goldPrice = round( ($sellDataById[$gw2Id]['buys']['unit_price'] * 0.9), 0, PHP_ROUND_HALF_UP);
                 $item->setPrice($goldPrice);
             }
         }

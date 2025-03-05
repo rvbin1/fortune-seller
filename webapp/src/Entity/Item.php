@@ -10,6 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: ItemRepository::class)]
 class Item
 {
+    private const COPPER = 'Copper';
+    private const SILVER = 'Silver';
+    private const GOLD = 'Gold';
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -67,9 +70,6 @@ class Item
 
     #[ORM\Column(nullable: true)]
     private ?float $price = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $priceUnit = null;
 
     public function __construct()
     {
@@ -276,15 +276,27 @@ class Item
         return implode(', ', $attributeNames);
     }
 
-    public function getPriceUnit(): ?string
+    public function getConvertedPrice(): string
     {
-        return $this->priceUnit;
+        $price = $this->getPrice();
+        $length = strlen($price);
+
+        $copper = substr($price, -2);
+        $silver = $length > 2 ? substr($price, -4, 2) : '';
+        $gold = $length > 4 ? substr($price, 0, $length - 4) : '';
+
+        $parts = [];
+
+        if ($gold !== '' && (int)$gold > 0) {
+            $parts[] = (int)$gold . ' ' .  self::GOLD;
+        }
+        if ($silver !== '' && (int)$silver > 0) {
+            $parts[] = (int)$silver . ' ' . self::SILVER;
+        }
+        if ($copper !== '' && (int)$copper > 0) {
+            $parts[] = (int)$copper . ' ' . self::COPPER;
+        }
+        return implode(', ', $parts);
     }
 
-    public function setPriceUnit(?string $priceUnit): static
-    {
-        $this->priceUnit = $priceUnit;
-
-        return $this;
-    }
 }
