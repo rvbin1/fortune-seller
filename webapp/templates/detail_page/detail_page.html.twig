@@ -1,9 +1,4 @@
 {% extends 'base.html.twig' %}
-
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
-{% endblock %}
-
 {% block body %}
     <div class="detail-container">
         <div class="detail-header">
@@ -23,8 +18,14 @@
                                     <div class="detail-recipe-box-header">
                                         <img src="{{ recipe.getOutputItem().getPicUrl() }}"
                                              alt="{{ recipe.getOutputItem().getName() }} Icon" class="detail-item-icon">
-                                        <h4>{{ recipe.getOutputItem().getName() }}
-                                            ({{ recipe.getOutputItem().getConvertedPrice() }})</h4>
+                                        <a href="{{ path('app_detail_page', {
+                                            'id': recipe.getOutputItem().id,
+                                            'crafting': app.request.get('crafting'),
+                                            'mysticForge': app.request.get('mysticForge')
+                                        }) }}">
+                                            <h4>{{ recipe.getOutputItem().getName() }}
+                                                ({{ recipe.getOutputItem().getConvertedPrice() }})</h4>
+                                        </a>
                                     </div>
                                     <div class="ingredients">
                                         {% for ingredient in recipe.getIngredients() %}
@@ -56,8 +57,14 @@
                                         <img src="{{ mysticForge.getOutputItem().getPicUrl() }}"
                                              alt="{{ mysticForge.getOutputItem().getName() }} Icon"
                                              class="detail-item-icon">
-                                        <h4>{{ mysticForge.getOutputItem().getName() }}
-                                            ({{ mysticForge.getOutputItem().getConvertedPrice() }})</h4>
+                                        <a href="{{ path('app_detail_page', {
+                                            'id': mysticForge.getOutputItem().id,
+                                            'crafting': app.request.get('crafting'),
+                                            'mysticForge': app.request.get('mysticForge')
+                                        }) }}">
+                                            <h4>{{ mysticForge.getOutputItem().getName() }}
+                                                ({{ mysticForge.getOutputItem().getConvertedPrice() }})</h4>
+                                        </a>
                                     </div>
                                     <div class="ingredients">
                                         {% for ingredient in mysticForge.getIngredients() %}
@@ -76,10 +83,6 @@
                 {% else %}
                     <h4>There are no mystic forges that contain this item.</h4>
                 {% endif %}
-            {% endif %}
-
-            {% if usedMysticRecipes is empty and usedRecipes is empty %}
-                <h3>No crafting recipe or mystic forge contains this item.</h3>
             {% endif %}
         </div>
     </div>
