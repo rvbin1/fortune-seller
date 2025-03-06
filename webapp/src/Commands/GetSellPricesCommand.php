@@ -8,14 +8,20 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 #[AsCommand(name: 'update:prices')]
 class GetSellPricesCommand extends Command
 {
+    private const COPPER = 'copper';
+    private const SILVER = 'silver';
+    private const GOLD = 'gold';
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly HttpClientInterface    $client,
+        private HttpClientInterface $client,
     ) {
         parent::__construct();
     }
@@ -24,11 +30,6 @@ class GetSellPricesCommand extends Command
     {
         $this->setDescription('Ruft die Verkaufsdaten aus der API von GW2 und gibt diese aus.');
     }
-
-    /**
-     * @param array<int, Item> $items
-     * @return array<int, Array> $allresults
-     */
     public function fetchSellInformation(array $items): array
     {
         $chunkedItems = array_chunk($items, 199);
@@ -56,6 +57,7 @@ class GetSellPricesCommand extends Command
                 $allResults = array_merge($allResults, $results);
             }
         }
+
         return $allResults;
     }
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -80,7 +82,8 @@ class GetSellPricesCommand extends Command
             }
             $gw2Id = (int) $item->getGw2Id();
             if (isset($sellDataById[$gw2Id])) {
-                $item->setPrice(round( $sellDataById[$gw2Id]['buys']['unit_price'] * 0.9, 0, PHP_ROUND_HALF_UP));
+                $goldPrice = round( ($sellDataById[$gw2Id]['buys']['unit_price'] * 0.9), 0, PHP_ROUND_HALF_UP);
+                $item->setPrice($goldPrice);
             }
         }
 

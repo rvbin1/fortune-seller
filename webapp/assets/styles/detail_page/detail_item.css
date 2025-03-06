@@ -28,10 +28,14 @@
     margin-top: 20px;
 }
 
-/* Container für Rezept-Boxen bzw. Mystic-Forge-Boxen */
+.detail-used-in-recipe,
+.detail-used-in-mystic {
+    margin-bottom: 30px;
+}
+
 .detail-recipe-list {
-    display: flex;
-    flex-wrap: wrap; /* Damit die Boxen bei Platzmangel umbrechen */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -39,8 +43,15 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
-    min-width: 200px; /* Mindestbreite, damit sie wie Boxen wirken */
     background-color: #f9f9f9;
+}
+
+/* Flex-Container für das Icon und den Rezeptnamen */
+.detail-recipe-box-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .ingredient {

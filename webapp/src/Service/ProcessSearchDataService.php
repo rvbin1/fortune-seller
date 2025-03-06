@@ -6,8 +6,7 @@ use Doctrine\ORM\EntityManagerInterface;
 
 readonly class ProcessSearchDataService
 {
-    public function __construct(private EntityManagerInterface $em,
-                                private ShowItemsService       $sis)
+    public function __construct(private ShowItemsService $sis)
     {
     }
 
@@ -16,9 +15,11 @@ readonly class ProcessSearchDataService
 
         if (is_array($searchData) && !empty($searchData))
         {
-            if ($searchData['query'] != null && $searchData['query'] !== '')
+            if ($searchData['query'] != null && $searchData['query'] !== '' ||
+                $searchData['crafting'] != null && $searchData['crafting'] !== '' ||
+                $searchData['mysticForge'] != null && $searchData['mysticForge'] !== '')
             {
-                return $this->sis->showItemsPaginated($page, $searchData['query']);
+                return $this->sis->showItemsPaginated($page, $searchData['query'], $searchData['crafting'], $searchData['mysticForge']);
             }
         }
     }
