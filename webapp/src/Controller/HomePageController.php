@@ -35,11 +35,12 @@ final class HomePageController extends AbstractController
         $searchForm->handleRequest($request);
 
         if ($searchForm->isSubmitted() && $searchForm->isValid()) {
+            /** @var array{query: string|null, crafting: bool, mysticForge: bool} $searchFormData */
             $searchFormData = $searchForm->getData();
             return $this->redirectToRoute('app_home_page', [
-                'page'  => 1,
-                'query' => $searchFormData['query'],
-                'crafting' => $searchFormData['crafting'],
+                'page'        => 1,
+                'query'       => $searchFormData['query'],
+                'crafting'    => $searchFormData['crafting'],
                 'mysticForge' => $searchFormData['mysticForge'],
             ]);
         }

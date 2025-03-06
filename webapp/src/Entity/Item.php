@@ -16,7 +16,7 @@ class Item
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private int $id;
 
     #[ORM\Column]
     private ?int $gw2Id = null;
@@ -32,7 +32,7 @@ class Item
      *
      * @var Collection<int, Recipes>
      */
-    #[ORM\OneToMany(mappedBy: 'outputItem', targetEntity: Recipes::class)]
+    #[ORM\OneToMany(targetEntity: Recipes::class, mappedBy: 'outputItem')]
     private Collection $producedRecipes;
 
     #[ORM\Column]
@@ -45,27 +45,21 @@ class Item
     private ?bool $craftable = null;
 
     /**
-     * Mystic-Forges, die dieses Item als Ergebnis produzieren.
-     *
      * @var Collection<int, MysticForge>
      */
-    #[ORM\OneToMany(mappedBy: 'outputItem', targetEntity: MysticForge::class)]
+    #[ORM\OneToMany(targetEntity: MysticForge::class, mappedBy: 'outputItem')]
     private Collection $producedMysticForges;
 
     /**
-     * Mystic-Forging-Zusatzinformationen, in denen dieses Item als Zutat genutzt wird.
-     *
      * @var Collection<int, MysticForgeIngredients>
      */
-    #[ORM\OneToMany(mappedBy: 'ingredientItem', targetEntity: MysticForgeIngredients::class)]
+    #[ORM\OneToMany(targetEntity: MysticForgeIngredients::class, mappedBy: 'ingredientItem')]
     private Collection $usedInMysticForgeIngredients;
 
     /**
-     * Rezepte, in denen dieses Item als Zutat genutzt wird.
-     *
      * @var Collection<int, RecipeIngredients>
      */
-    #[ORM\OneToMany(mappedBy: 'ingredient', targetEntity: RecipeIngredients::class)]
+    #[ORM\OneToMany(targetEntity: RecipeIngredients::class, mappedBy: 'ingredient')]
     private Collection $usedInRecipeIngredients;
 
     #[ORM\Column(nullable: true)]

@@ -8,17 +8,11 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\Serializer\SerializerInterface;
-use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 #[AsCommand(name: 'update:prices')]
 class GetSellPricesCommand extends Command
 {
-    private const COPPER = 'copper';
-    private const SILVER = 'silver';
-    private const GOLD = 'gold';
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
         private HttpClientInterface $client,
@@ -30,6 +24,13 @@ class GetSellPricesCommand extends Command
     {
         $this->setDescription('Ruft die Verkaufsdaten aus der API von GW2 und gibt diese aus.');
     }
+
+    /**
+     * Fetch sell information for a list of items.
+     *
+     * @param Item[] $items
+     * @return array<int, array<string, mixed>>
+     */
     public function fetchSellInformation(array $items): array
     {
         $chunkedItems = array_chunk($items, 199);
@@ -38,30 +39,30 @@ class GetSellPricesCommand extends Command
         foreach ($chunkedItems as $chunk) {
             $ids = [];
             foreach ($chunk as $item) {
-                if (!$item instanceof Item) {
-                    continue;
-                }
                 $ids[] = $item->getGw2Id();
-            }
-            if (empty($ids)) {
-                continue;
             }
 
             $url = "https://api.guildwars2.com/v2/commerce/prices?ids=" . implode(',', $ids);
-
             $response = $this->client->request('GET', $url);
             $content = $response->getContent();
-
             $results = json_decode($content, true);
+
             if (is_array($results)) {
-                $allResults = array_merge($allResults, $results);
+                foreach ($results as $result) {
+                    if (is_array($result)) {
+                        $allResults[] = $result;
+                    }
+                }
             }
         }
 
+        /** @var array<int, array<string, mixed>> $allResults */
         return $allResults;
     }
+
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        /** @var Item[] $items */
         $items = $this->entityManager->getRepository(Item::class)
             ->createQueryBuilder('i')
             ->where('i.sellable = :sellable')
@@ -70,23 +71,31 @@ class GetSellPricesCommand extends Command
             ->getResult();
 
         $sellData = $this->fetchSellInformation($items);
-
         $sellDataById = [];
+
         foreach ($sellData as $priceInfo) {
-            $sellDataById[(int) $priceInfo['id']] = $priceInfo;
+            if (
+                !isset($priceInfo['id'], $priceInfo['buys']) ||
+                !is_array($priceInfo['buys']) ||
+                !isset($priceInfo['buys']['unit_price']) ||
+                !is_numeric($priceInfo['buys']['unit_price'])
+            ) {
+                continue;
+            }
+            $sellDataById[$priceInfo['id']] = $priceInfo;
         }
 
         foreach ($items as $item) {
-            if (!$item instanceof Item) {
-                continue;
-            }
             $gw2Id = (int) $item->getGw2Id();
             if (isset($sellDataById[$gw2Id])) {
-                $goldPrice = round( ($sellDataById[$gw2Id]['buys']['unit_price'] * 0.9), 0, PHP_ROUND_HALF_UP);
+                $priceInfo = $sellDataById[$gw2Id];
+                $unitPrice = (int) $priceInfo['buys']['unit_price'];
+                $goldPrice = round($unitPrice * 0.9, 0, PHP_ROUND_HALF_UP);
                 $item->setPrice($goldPrice);
             }
         }
 
+        /** @var Item[] $notSellableItems */
         $notSellableItems = $this->entityManager->getRepository(Item::class)
             ->createQueryBuilder('i')
             ->where('i.sellable = :sellable')
@@ -95,7 +104,6 @@ class GetSellPricesCommand extends Command
             ->getResult();
 
         foreach ($notSellableItems as $notSellableItem) {
-            if (!$notSellableItem instanceof Item) continue;
             $notSellableItem->setPrice(null);
         }
 

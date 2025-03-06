@@ -24,12 +24,13 @@ class SearchFormType extends AbstractType
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Suchen',
+                'required' =>false,
                 'attr' => [
                     'class' => 'searchButton',
                 ],
             ])
             ->add('crafting', CheckboxType::class, [
-                'label' => "Crafting",
+                'label' => 'Crafting',
                 'required' => false,
             ])
             ->add('mysticForge', CheckboxType::class, [
