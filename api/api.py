@@ -2,6 +2,10 @@ import requests
 import json
 from collections import defaultdict
 
+PREFIXES = ["Berserker's", "Zealot's", "Soldier's", "Forsaken", "Valkyrie", "Harrier's", "Heretic", "Tyrant", "Paladin", "Commander's", "Demolisher", "Swashbuckler", "Marauder", "Avatar", "Destroyer", "Vigilant", "Crusader", "Wanderer's", "Diviner's", "Dragon's", "Wizard", "Viper's", "Grieving", "Sage", "Marshal's", "Captain's", "Rampager's", "Assassin's", "Seraph", "Knight's", "Cavalier's", "Nomad's", "Settler's", "Giver's", "Trailblazer's", "Minstrel's", "Sentinel's", "Shaman's", "Plaguedoctor's", "Ritualist's", "Sinister", "Carrion", "Rabid", "Dire", "Apostate's", "Bringer's", "Cleric's", "Magi's", "Apothecary's", "Celestial", "Mighty", "Strong", "Vagabond", "Vigorous", "Potent", "Honed", "Precise", "Hunter", "Penetrating", "Resilient", "Stout", "Vital", "Hearty", "Mystical", "Malign", "Ravaging", "Deserter", "Lingering", "Spiteful", "Healing", "Rejuvenating", "Survivor", "Mending"]
+
+SUFFIXES = ["Might", "Strength", "Vagabond", "Vigor", "Potency", "Honing", "Precision", "Hunter", "Penetration", "Resilience", "Stout", "Vitality", "Heartiness", "Luck", "Festering", "Ravaging", "Deserter", "Lingering", "Spiteful", "Compassion", "Rejuvenating", "Survivor", "Mending", "the Pack", "Hoelbrak", "the Dolyak", "Lyssa", "the Flame Legion", "Melandru", "Scavenging", "the Flock", "Mercy", "Rage", "the Afflicted", "Grenth", "the Eagle", "Dwayna", "the Centaur", "Divinity", "Vampirism", "Infiltration", "of Fire"]
+
 def get_item_data(url: str) -> dict:
     """
     This function makes an api request for one or multiple items and returns the wanted attributes about name, id, icon and item_attributes
@@ -88,6 +92,7 @@ def get_recipe_data(url: str) -> dict:
     if isinstance(return_json, dict):
         return {return_json["id"]: {
             "output_item_id": return_json["output_item_id"],
+            "output_item_count": return_json["output_item_count"],
             "ingredients": return_json["ingredients"],
         }}
     else:
@@ -96,6 +101,7 @@ def get_recipe_data(url: str) -> dict:
             item_data = defaultdict(bool, item_data)
             return_dict[item_data["id"]] = {
                 "output_item_id": item_data["output_item_id"],
+                "output_item_count": item_data["output_item_count"],
                 "ingredients": item_data["ingredients"],
             }
         return return_dict
@@ -124,7 +130,16 @@ def write_item_data() -> list:
             item_data = get_item_data(item_url)
             sell_data = defaultdict(bool, get_sellable_data(sell_url))
             for item in item_data:
-                item_content.append({"gw2id": item, "name": item_data[item]["name"], "pic_url": item_data[item]["icon"], "sellable": sell_data[item], "attributes": item_data[item]["attributes"]})
+                item_name = item_data[item]["name"].replace(" ", "_")
+                if item_name.split("_")[0] in PREFIXES:
+                    item_name = item_name.replace(item_name.split("_")[0], "")
+                try:
+                    if item_name.split("of_")[1] in SUFFIXES:
+                        item_name = item_name.split("_of_")[0]
+                except:
+                    pass
+                wiki_url = f"https://wiki.guildwars2.com/wiki/{item_name}"
+                item_content.append({"gw2id": item, "name": item_data[item]["name"], "pic_url": item_data[item]["icon"], "sellable": sell_data[item], "attributes": item_data[item]["attributes"], "wiki_url": wiki_url})
             
             # back to initial state
             i = 0
@@ -138,7 +153,16 @@ def write_item_data() -> list:
             item_data = get_item_data(item_url)
             sell_data = defaultdict(bool, get_sellable_data(sell_url))
             for item in item_data:
-                item_content.append({"gw2id": item, "name": item_data[item]["name"], "pic_url": item_data[item]["icon"], "sellable": sell_data[item], "attributes": item_data[item]["attributes"]})
+                item_name = item_data[item]["name"].replace(" ", "_")
+                if item_name.split("_")[0] in PREFIXES:
+                    item_name = item_name.replace(item_name.split("_")[0], "")
+                try:
+                    if item_name.split("of_")[1] in SUFFIXES:
+                        item_name = item_name.split("_of_")[0]
+                except:
+                    pass
+                wiki_url = f"https://wiki.guildwars2.com/wiki/{item_name}"
+                item_content.append({"gw2id": item, "name": item_data[item]["name"], "pic_url": item_data[item]["icon"], "sellable": sell_data[item], "attributes": item_data[item]["attributes"], "wiki_url": wiki_url})
             
 
     return item_content
@@ -163,7 +187,7 @@ def write_recipe_data() -> list:
             recipe_url = recipe_url.removesuffix(",")
             item_data = get_recipe_data(recipe_url)
             for item in item_data:
-                recipe_content.append({"gw2_id": item, "output_item_id": item_data[item]["output_item_id"], "ingredients": item_data[item]["ingredients"]})
+                recipe_content.append({"gw2_id": item, "output_item_id": item_data[item]["output_item_id"], "output_item_count": str(item_data[item]["output_item_count"]), "ingredients": item_data[item]["ingredients"]})
 
             # back to initial state
             i = 0
@@ -172,7 +196,7 @@ def write_recipe_data() -> list:
             recipe_url = recipe_url.removesuffix(",")
             item_data = get_recipe_data(recipe_url)
             for item in item_data:
-                recipe_content.append({"gw2_id": item, "output_item_id": item_data[item]["output_item_id"], "ingredients": item_data[item]["ingredients"]})
+                recipe_content.append({"gw2_id": item, "output_item_id": item_data[item]["output_item_id"], "output_item_count": str(item_data[item]["output_item_count"]), "ingredients": item_data[item]["ingredients"]})
 
     return recipe_content
 
@@ -189,7 +213,10 @@ def write_mystic_forge_data() -> list:
     response = requests.get("https://gw2profits.com/json/v3?disciplines=Mystic%20Forge")
     mystic_forge_recipes = json.loads(response.content)
     for mystic_forge_recipe in mystic_forge_recipes:
-        recipe_content.append({"gw2_id": mystic_forge_recipe["id"], "output_item_id": mystic_forge_recipe["output_item_id"], "ingredients": mystic_forge_recipe["ingredients"]})
+        if "output_item_count_range" in mystic_forge_recipe:
+            recipe_content.append({"gw2_id": mystic_forge_recipe["id"], "output_item_id": mystic_forge_recipe["output_item_id"], "output_item_count": str(mystic_forge_recipe["output_item_count_range"]), "ingredients": mystic_forge_recipe["ingredients"]})
+        else:
+            recipe_content.append({"gw2_id": mystic_forge_recipe["id"], "output_item_id": mystic_forge_recipe["output_item_id"], "output_item_count": str(mystic_forge_recipe["output_item_count"]), "ingredients": mystic_forge_recipe["ingredients"]})
 
     return recipe_content
 
