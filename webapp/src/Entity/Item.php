@@ -279,24 +279,25 @@ class Item
     public function getConvertedPrice(): string
     {
         $price = $this->getPrice();
-        $length = strlen($price);
 
-        $copper = substr($price, -2);
-        $silver = $length > 2 ? substr($price, -4, 2) : '';
-        $gold = $length > 4 ? substr($price, 0, $length - 4) : '';
+        $gold = intdiv($price, 10000);
+        $silver = intdiv($price % 10000, 100);
+        $copper = $price % 100;
 
         $parts = [];
-
-        if ($gold !== '' && (int)$gold > 0) {
-            $parts[] = (int)$gold . ' ' .  self::GOLD;
+        if ($gold > 0) {
+            $parts[] = $gold . ' ' . self::GOLD;
         }
-        if ($silver !== '' && (int)$silver > 0) {
-            $parts[] = (int)$silver . ' ' . self::SILVER;
+        if ($silver > 0) {
+            $parts[] = $silver . ' ' . self::SILVER;
         }
-        if ($copper !== '' && (int)$copper > 0) {
-            $parts[] = (int)$copper . ' ' . self::COPPER;
+        if ($copper > 0 || empty($parts)) {
+            $parts[] = $copper . ' ' . self::COPPER;
+        }
+        if ($this->sellable === false)
+        {
+            return 'not sellable';
         }
         return implode(', ', $parts);
     }
-
 }

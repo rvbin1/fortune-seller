@@ -32,7 +32,6 @@ class GetSellPricesCommand extends Command
     }
     public function fetchSellInformation(array $items): array
     {
-        // Teile die Items in Chunks von 199 Elementen
         $chunkedItems = array_chunk($items, 199);
         $allResults = [];
 
@@ -48,14 +47,11 @@ class GetSellPricesCommand extends Command
                 continue;
             }
 
-            // Baue die URL mit den IDs des aktuellen Chunks
             $url = "https://api.guildwars2.com/v2/commerce/prices?ids=" . implode(',', $ids);
 
-            // Sende den Request
             $response = $this->client->request('GET', $url);
             $content = $response->getContent();
 
-            // Dekodiere das Ergebnis und füge es zusammen
             $results = json_decode($content, true);
             if (is_array($results)) {
                 $allResults = array_merge($allResults, $results);
