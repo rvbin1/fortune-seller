@@ -4,7 +4,7 @@ namespace App\Service;
 
 use App\Entity\Item;
 
-readonly class ProcessSearchDataService
+class ProcessSearchDataService
 {
     public function __construct(private ShowItemsService $sis)
     {

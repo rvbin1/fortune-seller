@@ -149,9 +149,11 @@
       <path value="$PROJECT_DIR$/webapp/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/webapp/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/webapp/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/webapp/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/webapp/vendor/mockery/mockery" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.3" />
   <component name="PhpStan">
     <PhpStan_settings>
       <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="4031290d-4e41-473a-87ad-b2a515e3076d" timeout="60000" />

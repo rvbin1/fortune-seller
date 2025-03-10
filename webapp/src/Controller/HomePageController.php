@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-final class HomePageController extends AbstractController
+class HomePageController extends AbstractController
 {
     public function __construct(
         private readonly ProcessSearchDataService $psd,

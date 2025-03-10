@@ -15,7 +15,7 @@ class GetSellPricesCommand extends Command
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private HttpClientInterface $client,
+        private readonly HttpClientInterface    $client,
     ) {
         parent::__construct();
     }
@@ -26,8 +26,6 @@ class GetSellPricesCommand extends Command
     }
 
     /**
-     * Fetch sell information for a list of items.
-     *
      * @param Item[] $items
      * @return array<int, array<string, mixed>>
      */
