@@ -197,19 +197,19 @@ def main():
     print("Collecting item data")
     item_content = write_item_data()
     print("Finished collecting item data. Writing item.json file")
-    with open('items.json', 'w', encoding='utf-8') as f:
+    with open('./webapp/public/json/items.json', 'w', encoding='utf-8') as f:
         json.dump(item_content, f, ensure_ascii=False, indent=4)  
 
     print("Collecting recipe data")
     recipes_content = write_recipe_data()
     print("Finished collecting recipe data. Writing recipe.json file")
-    with open("recipe.json", "w", encoding="utf-8") as f:
+    with open("./webapp/public/json/recipe.json", "w", encoding="utf-8") as f:
         json.dump(recipes_content, f, ensure_ascii=False, indent=4) 
 
     print("Collecting Mystic forge recipe data")
     mystic_content = write_mystic_forge_data()
     print("Finished collecting mystic forge recipe data. Writing mysticForge.json file")
-    with open("mysticForge.json", "w", encoding="utf-8") as f:
+    with open("./webapp/public/json/mysticForge.json", "w", encoding="utf-8") as f:
         json.dump(mystic_content, f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__": 
