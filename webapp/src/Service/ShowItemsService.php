@@ -10,14 +10,27 @@ class ShowItemsService
 {
     private const ITEMS_PER_PAGE = 10;
 
+    /** @var string[] */
     private array $falseItem;
+
+    /** @var string[] */
     private array $falseItemRegex;
+
     public function __construct(private readonly EntityManagerInterface $em)
     {
-       $this->falseItem = ["Emote", "Mastery Point", "???"];
-       $this->falseItemRegex = ["^\\(\\([0-9]+\\)\\)$", "^\\[\\[[0-9]+\\]\\]$"];
+        $this->falseItem = ["Emote", "Mastery Point", "???"];
+        $this->falseItemRegex = ["^\\(\\([0-9]+\\)\\)$", "^\\[\\[[0-9]+\\]\\]$"];
     }
 
+    /**
+     * Paginates items.
+     *
+     * @param int $page
+     * @param string|null $searchString
+     * @param bool|null $crafting
+     * @param bool|null $mysticForge
+     * @return array{items: Item[], totalPages: int, currentPage: int}
+     */
     public function showItemsPaginated(int $page, ?string $searchString = null, ?bool $crafting = null, ?bool $mysticForge = null): array
     {
         $query = $this->em->getRepository(Item::class)
@@ -42,15 +55,19 @@ class ShowItemsService
             $query->andWhere("regexp(i.name, :falseItemRegex) = 0")
                 ->setParameter("falseItemRegex", $falseItemRegex);
         }
+
         $query->orderBy('i.price', 'DESC');
 
         $query->getQuery();
 
         $paginator = new Paginator($query);
 
+        /** @var Item[] $items */
+        $items = iterator_to_array($paginator->getIterator());
+
         return [
-            'items' => $paginator->getIterator()->getArrayCopy(),
-            'totalPages' => ceil(count($paginator) / self::ITEMS_PER_PAGE),
+            'items' => $items,
+            'totalPages' => (int) ceil(count($paginator) / self::ITEMS_PER_PAGE),
             'currentPage' => $page,
         ];
     }

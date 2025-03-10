@@ -24,7 +24,6 @@ class SearchFormType extends AbstractType
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Suchen',
-                'required' =>false,
                 'attr' => [
                     'class' => 'searchButton',
                 ],

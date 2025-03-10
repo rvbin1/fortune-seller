@@ -13,10 +13,12 @@ class Item
     private const COPPER = 'Copper';
     private const SILVER = 'Silver';
     private const GOLD = 'Gold';
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private int $id;
+    // @phpstan-ignore-next-line
+    private ?int $id = null;
 
     #[ORM\Column]
     private ?int $gw2Id = null;
@@ -38,6 +40,9 @@ class Item
     #[ORM\Column]
     private ?bool $sellable = null;
 
+    /**
+     * @var array<int, array{attribute: string}>|null
+     */
     #[ORM\Column(nullable: true)]
     private ?array $attributes = null;
 
@@ -58,7 +63,7 @@ class Item
 
     /**
      * @var Collection<int, RecipeIngredients>
-     */lws
+     */
     #[ORM\OneToMany(targetEntity: RecipeIngredients::class, mappedBy: 'ingredient')]
     private Collection $usedInRecipeIngredients;
 
@@ -149,11 +154,17 @@ class Item
         return $this;
     }
 
-    public function getAttributes(): ?array
+    /**
+     * @return array<int, array{attribute: string}>
+     */
+    public function getAttributes(): array
     {
-        return $this->attributes;
+        return $this->attributes ?? [];
     }
 
+    /**
+     * @param array<int, array{attribute: string}>|null $attributes
+     */
     public function setAttributes(?array $attributes): self
     {
         $this->attributes = $attributes;
@@ -258,14 +269,11 @@ class Item
         return $this;
     }
 
-    /**
-     * Gibt eine durch Komma getrennte Liste der Attributnamen zurück.
-     */
     public function getAttributeNames(): string
     {
         $attributeNames = [];
         foreach ($this->getAttributes() as $attribute) {
-            $attributeNames[] = $attribute['attribute'];
+                $attributeNames[] = $attribute['attribute'];
         }
         return implode(', ', $attributeNames);
     }
@@ -273,6 +281,10 @@ class Item
     public function getConvertedPrice(): string
     {
         $price = $this->getPrice();
+        if ($price === null) {
+            return 'not sellable';
+        }
+        $price = (int)$price;
 
         $gold = intdiv($price, 10000);
         $silver = intdiv($price % 10000, 100);
@@ -288,8 +300,7 @@ class Item
         if ($copper > 0 || empty($parts)) {
             $parts[] = $copper . ' ' . self::COPPER;
         }
-        if ($this->sellable === false)
-        {
+        if ($this->sellable === false) {
             return 'not sellable';
         }
         return implode(', ', $parts);

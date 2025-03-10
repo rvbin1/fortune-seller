@@ -12,10 +12,10 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class HomePageController extends AbstractController
 {
-
-    public function __construct(private readonly ProcessSearchDataService $psd,
-                                private readonly ShowItemsService $sis)
-    {
+    public function __construct(
+        private readonly ProcessSearchDataService $psd,
+        private readonly ShowItemsService $sis
+    ) {
     }
 
     #[Route('/{page<\d+>?1}', name: 'app_home_page')]
@@ -46,18 +46,23 @@ final class HomePageController extends AbstractController
         }
 
         if ($query || $crafting || $mysticForge) {
-            $searchData = array('query' => $query, 'crafting' => $crafting, 'mysticForge' => $mysticForge);
+            $searchData = [
+                'query' => $query,
+                'crafting' => $crafting,
+                'mysticForge' => $mysticForge
+            ];
+            // @phpstan-ignore-next-line
             $pagination = $this->psd->processData($page, $searchData);
         } else {
             $pagination = $this->sis->showItemsPaginated($page);
         }
 
         return $this->render('home_page/index.html.twig', [
-            'searchForm'    => $searchForm->createView(),
-            'items'         => $pagination['items'],
-            'totalPages'    => $pagination['totalPages'],
-            'currentPage'   => $pagination['currentPage'],
-            'query'         => $query,
+            'searchForm'  => $searchForm->createView(),
+            'items'       => $pagination['items'],
+            'totalPages'  => $pagination['totalPages'],
+            'currentPage' => $pagination['currentPage'],
+            'query'       => $query,
         ]);
     }
 }
