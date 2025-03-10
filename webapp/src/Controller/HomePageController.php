@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\SearchFormType;
+use App\Service\GetGemCourse;
 use App\Service\ProcessSearchDataService;
 use App\Service\ShowItemsService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,7 +15,8 @@ final class HomePageController extends AbstractController
 {
 
     public function __construct(private readonly ProcessSearchDataService $psd,
-                                private readonly ShowItemsService $sis)
+                                private readonly ShowItemsService $sis,
+                                private readonly GetGemCourse $ggc)
     {
     }
 
@@ -57,6 +59,7 @@ final class HomePageController extends AbstractController
             'totalPages'    => $pagination['totalPages'],
             'currentPage'   => $pagination['currentPage'],
             'query'         => $query,
+            'gemCourse'     => $this->ggc->getGemCourse(),
         ]);
     }
 }
