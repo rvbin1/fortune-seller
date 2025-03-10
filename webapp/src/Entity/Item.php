@@ -58,7 +58,7 @@ class Item
 
     /**
      * @var Collection<int, RecipeIngredients>
-     */
+     */lws
     #[ORM\OneToMany(targetEntity: RecipeIngredients::class, mappedBy: 'ingredient')]
     private Collection $usedInRecipeIngredients;
 
