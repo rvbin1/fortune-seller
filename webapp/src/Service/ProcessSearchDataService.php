@@ -2,25 +2,31 @@
 
 namespace App\Service;
 
-use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\Item;
 
-readonly class ProcessSearchDataService
+class ProcessSearchDataService
 {
     public function __construct(private ShowItemsService $sis)
     {
     }
 
-    public function processData($page ,$searchData)
+    /**
+     * Processes search data.
+     *
+     * @param int $page
+     * @param array{query?: string|null, crafting?: bool, mysticForge?: bool}|null $searchData
+     * @return array{items: Item[], totalPages: int, currentPage: int}
+     */
+    public function processData(int $page, ?array $searchData): array
     {
+        $query = $searchData['query'] ?? null;
+        $crafting = $searchData['crafting'] ?? null;
+        $mysticForge = $searchData['mysticForge'] ?? null;
 
-        if (is_array($searchData) && !empty($searchData))
-        {
-            if ($searchData['query'] != null && $searchData['query'] !== '' ||
-                $searchData['crafting'] != null && $searchData['crafting'] !== '' ||
-                $searchData['mysticForge'] != null && $searchData['mysticForge'] !== '')
-            {
-                return $this->sis->showItemsPaginated($page, $searchData['query'], $searchData['crafting'], $searchData['mysticForge']);
-            }
+        if (!empty($query) || !empty($crafting) || !empty($mysticForge)) {
+            return $this->sis->showItemsPaginated($page, $query, $crafting, $mysticForge);
         }
+
+        return $this->sis->showItemsPaginated($page);
     }
 }
