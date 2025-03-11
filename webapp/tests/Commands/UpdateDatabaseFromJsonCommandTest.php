@@ -49,7 +49,7 @@ class UpdateDatabaseFromJsonCommandTest extends Command
 
         try {
             $this->processItems($data);
-            $this->entityManager->flush(); // Only called if items are processed successfully
+            $this->entityManager->flush();
             $io->success("Database updated successfully.");
         } catch (\Exception $e) {
             $io->error("An error occurred: " . $e->getMessage());
@@ -63,7 +63,7 @@ class UpdateDatabaseFromJsonCommandTest extends Command
     {
         foreach ($data as $item) {
             if (!isset($item['id'], $item['name'], $item['value'])) {
-                continue; // Skip invalid entries
+                continue;
             }
 
             $entity = $this->entityManager->getRepository(Item::class)->find($item['id']);

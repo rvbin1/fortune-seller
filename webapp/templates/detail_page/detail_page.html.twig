@@ -4,7 +4,11 @@
         <div class="detail-header">
             <img src="{{ item.getPicUrl() }}" alt="{{ item.getName() }} Icon" class="detail-item-icon">
             <div class="detail-item-info">
-                <h2>{{ item.getName() }} ({{ item.getConvertedPrice() }})</h2>
+                <h2>
+                    {{ item.getName() }} ({{ item.getConvertedPrice() }})
+                    <a href="{{ item.getWikiUrl() }}" class="fa-solid fa-link"></a>
+                </h2>
+
             </div>
         </div>
         <div class="detail-content">

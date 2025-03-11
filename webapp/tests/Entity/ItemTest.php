@@ -131,11 +131,9 @@ class ItemTest extends TestCase
         $item = new Item();
         $item->setSellable(true);
 
-        // For price = 123456, expect 12 Gold, 34 Silver, 56 Copper.
         $item->setPrice(123456);
         $this->assertEquals('12 Gold, 34 Silver, 56 Copper', $item->getConvertedPrice());
 
-        // For price less than 100 (only copper)
         $item->setPrice(50);
         $this->assertEquals('50 Copper', $item->getConvertedPrice());
     }

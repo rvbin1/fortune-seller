@@ -46,7 +46,6 @@
     background-color: #f9f9f9;
 }
 
-/* Flex-Container für das Icon und den Rezeptnamen */
 .detail-recipe-box-header {
     display: flex;
     align-items: center;

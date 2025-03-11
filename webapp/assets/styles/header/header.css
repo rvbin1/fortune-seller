@@ -4,9 +4,9 @@
     margin-bottom: 20px;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Elemente vertikal anordnen */
-    justify-content: center; /* vertikale Zentrierung */
-    align-items: center; /* horizontale Zentrierung */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .heading {
@@ -18,7 +18,7 @@
 }
 
 .gemCourse {
-    margin-top: 10px; /* Abstand zur Überschrift */
+    margin-top: 10px;
     font-family: 'MedievalSharp', sans-serif;
     color: white;
 }

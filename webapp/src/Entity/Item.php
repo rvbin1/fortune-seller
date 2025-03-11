@@ -30,8 +30,6 @@ class Item
     private ?string $name = null;
 
     /**
-     * Rezepte, bei denen dieses Item das Ergebnis ist.
-     *
      * @var Collection<int, Recipes>
      */
     #[ORM\OneToMany(targetEntity: Recipes::class, mappedBy: 'outputItem')]
@@ -69,6 +67,9 @@ class Item
 
     #[ORM\Column(nullable: true)]
     private ?float $price = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $wikiUrl = null;
 
     public function __construct()
     {
@@ -304,5 +305,17 @@ class Item
             return 'not sellable';
         }
         return implode(', ', $parts);
+    }
+
+    public function getWikiUrl(): ?string
+    {
+        return $this->wikiUrl;
+    }
+
+    public function setWikiUrl(?string $wikiUrl): static
+    {
+        $this->wikiUrl = $wikiUrl;
+
+        return $this;
     }
 }

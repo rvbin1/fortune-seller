@@ -24,8 +24,6 @@ class MysticForge
     private ?int $gw2RecipeId = null;
 
     /**
-     * Zutaten für den Mystic Forge.
-     *
      * @var Collection<int, MysticForgeIngredients>
      */
     #[ORM\OneToMany(targetEntity: MysticForgeIngredients::class, mappedBy: 'mysticForge')]

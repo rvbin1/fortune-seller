@@ -21,8 +21,6 @@ class Recipes
     private ?Item $outputItem = null;
 
     /**
-     * Zutaten der Rezeptur.
-     *
      * @var Collection<int, RecipeIngredients>
      */
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredients::class, cascade: ['persist', 'remove'])]
