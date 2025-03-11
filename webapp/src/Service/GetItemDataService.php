@@ -12,8 +12,6 @@ class GetItemDataService
     }
 
     /**
-     * Gets detailed data for a specific item.
-     *
      * @param int $id
      * @param bool|null $craftingBool
      * @param bool|null $mysticForgeBool

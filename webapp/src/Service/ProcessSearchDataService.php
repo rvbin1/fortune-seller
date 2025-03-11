@@ -11,8 +11,6 @@ class ProcessSearchDataService
     }
 
     /**
-     * Processes search data.
-     *
      * @param int $page
      * @param array{query?: string|null, crafting?: bool, mysticForge?: bool}|null $searchData
      * @return array{items: Item[], totalPages: int, currentPage: int}

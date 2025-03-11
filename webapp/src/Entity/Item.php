@@ -30,8 +30,6 @@ class Item
     private ?string $name = null;
 
     /**
-     * Rezepte, bei denen dieses Item das Ergebnis ist.
-     *
      * @var Collection<int, Recipes>
      */
     #[ORM\OneToMany(targetEntity: Recipes::class, mappedBy: 'outputItem')]

@@ -23,8 +23,6 @@ class ShowItemsService
     }
 
     /**
-     * Paginates items.
-     *
      * @param int $page
      * @param string|null $searchString
      * @param bool|null $crafting

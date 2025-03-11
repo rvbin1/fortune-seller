@@ -22,7 +22,7 @@ class GetSellPricesCommand extends Command
 
     protected function configure(): void
     {
-        $this->setDescription('Ruft die Verkaufsdaten aus der API von GW2 und gibt diese aus.');
+        $this->setDescription('Get Item prices');
     }
 
     /**
