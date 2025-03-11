@@ -24,6 +24,7 @@ class DetailPageController extends AbstractController
 
         $data = $this->gids->getItemData($id, $crafting, $mysticForge);
 
+        $data['gemCourse'] = $this->ggc->getGemCourse();
 
         return $this->render('detail_page/detail_page.html.twig', $data);
     }
