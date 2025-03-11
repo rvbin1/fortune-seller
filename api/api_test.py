@@ -1,74 +1,119 @@
-import pytest 
+from unittest.mock import patch
+import unittest
 import api
-"""
-get_item_data
-get_sellable_data
-get_recipe_data
-write_item_data
-write_recipe_data
-write_mystic_forge_data
-"""
+import requests
 
-#test function get_item_data
-def test_get_item_data_wrong_url():
-    with pytest.raises(Exception) as e_info:
-        api.get_item_data("wrongurl")
+class TestGetItemData(unittest.TestCase):
+    def test_get_item_data_wrong_url(self) -> None:
+        with self.assertRaises(requests.exceptions.ConnectionError) as e_info:
+            api.get_item_data("https://wrongurl")
 
-def test_get_item_data_passes_one_id():
-    assert api.get_item_data("https://api.guildwars2.com/v2/items/56") == {56: {"name": "Strong Back Brace", "icon": "https://render.guildwars2.com/file/03B65C435B15EB2C10E04F3454B03718AAF3AE90/61004.png", "attributes": [{"attribute": "Power", "modifier": 5}, {"attribute": "Precision", "modifier": 3}]}}
+    @patch('requests.get')
+    def test_get_item_data_passes_one_id_without_details(self, mock_get: patch):
+        mock_response = mock_get.return_value  
+        mock_response.json.return_value = {"id": 56, "name": "TestName", "icon": "TestIcon"} 
+        url = 'https://mock.com/api/item/1'
+        result = api.get_item_data(url)  
+        
+        self.assertEqual(result, {56: {"name": "TestName", "icon": "TestIcon", "attributes":  []}})  
+        mock_get.assert_called_once_with(url)  
+        
+    @patch('requests.get')
+    def test_get_item_data_passes_one_id_with_details_without_infix(self, mock_get: patch):
+        mock_response = mock_get.return_value  
+        mock_response.json.return_value = {"id": 56, "name": "TestName", "icon": "TestIcon", "details": {}} 
+        url = 'https://mock.com/api/item/1'
+        result = api.get_item_data(url)  
+        
+        self.assertEqual(result, {56: {"name": "TestName", "icon": "TestIcon", "attributes":  []}})  
+        mock_get.assert_called_once_with(url)  
 
-def test_get_item_data_passes_one_wrong_id():
-    assert api.get_item_data("https://api.guildwars2.com/v2/items/0") == {'': {'attributes': [], 'icon': '', 'name': ''}}
+    @patch('requests.get')
+    def test_get_item_data_passes_one_id_with_details_with_infix(self, mock_get: patch):
+        mock_response = mock_get.return_value  
+        mock_response.json.return_value = {"id": 56, "name": "TestName", "icon": "TestIcon", "details": {"infix_upgrade": {"attributes": [{"attribute": "Power","modifier": 5},{"attribute": "Precision","modifier": 3}]}}} 
+        url = 'http://mock.com/api/item/1'
+        result = api.get_item_data(url)  
+        
+        self.assertEqual(result, {56: {"name": "TestName", "icon": "TestIcon", "attributes":  [{"attribute": "Power","modifier": 5},{"attribute": "Precision","modifier": 3}]}})  
+        mock_get.assert_called_once_with(url)
 
-def test_get_item_data_passes_multiple_ids():
-    assert api.get_item_data("https://api.guildwars2.com/v2/items?ids=56,57") == {56: {"name": "Strong Back Brace", "icon": "https://render.guildwars2.com/file/03B65C435B15EB2C10E04F3454B03718AAF3AE90/61004.png", "attributes": [{"attribute": "Power", "modifier": 5}, {"attribute": "Precision", "modifier": 3}]},
-                                                                              57: {"name": "Hearty Back Brace", "icon": "https://render.guildwars2.com/file/03B65C435B15EB2C10E04F3454B03718AAF3AE90/61004.png", "attributes": [{"attribute": "Toughness", "modifier": 3}, {"attribute": "Vitality", "modifier": 5}]}}
-def test_get_item_data_passes_with_one_wrong_ids():
-    assert api.get_item_data("https://api.guildwars2.com/v2/items?ids=0,56") == {56: {'attributes': [{'attribute': 'Power', 'modifier': 5}, {'attribute': 'Precision', 'modifier': 3}], 'icon': 'https://render.guildwars2.com/file/03B65C435B15EB2C10E04F3454B03718AAF3AE90/61004.png', 'name': 'Strong Back Brace'}}
+    @patch('requests.get')
+    def test_get_item_data_wrong_id(self, mock_get: patch):
+        mock_response = mock_get.return_value  
+        mock_response.json.return_value = {"text": "no such id"} 
+        url = 'http://mock.com/api/item/0'
+        result = api.get_item_data(url)  
+        
+        self.assertEqual(result, {'': {'attributes': [], 'icon': '', 'name': ''}})
+        mock_get.assert_called_once_with(url)
+    
+    @patch('requests.get')
+    def test_get_item_data_passes_multiple_ids_without_details(self, mock_get: patch):
+        mock_response = mock_get.return_value  
+        mock_response.json.return_value = [{"id": 56, "name": "TestName", "icon": "TestIcon"}, {"id": 57, "name": "TestName", "icon": "TestIcon"}]
+        url = 'https://mock.com/api/item?=ids1,2'
+        result = api.get_item_data(url)   
+                
+        self.assertEqual(result, {56: {'name': 'TestName', 'icon': 'TestIcon', 'attributes': []}, 57: {'name': 'TestName', 'icon': 'TestIcon', 'attributes': []}})
+        mock_get.assert_called_once_with(url)  
 
-def test_get_item_data_passes_with_onyl_wrong_ids():
-    assert api.get_item_data("https://api.guildwars2.com/v2/items?ids=0,102938957") == {'': {'attributes': [], 'icon': '', 'name': ''}}
+    @patch('requests.get')
+    def test_get_item_data_passes_multiple_ids_with_details_without_infix(self, mock_get: patch):
+        mock_response = mock_get.return_value  
+        mock_response.json.return_value = [{"id": 56, "name": "TestName", "icon": "TestIcon"}, {"id": 57, "name": "TestName", "icon": "TestIcon", "details": {}}]
+        url = 'https://mock.com/api/item?=ids1,2'
+        result = api.get_item_data(url)   
+                
+        self.assertEqual(result, {56: {'name': 'TestName', 'icon': 'TestIcon', 'attributes': []}, 57: {'name': 'TestName', 'icon': 'TestIcon', 'attributes': []}})
+        mock_get.assert_called_once_with(url)
+
+    @patch('requests.get')
+    def test_get_item_data_passes_multiple_ids_with_details_with_infix(self, mock_get: patch):
+        mock_response = mock_get.return_value  
+        mock_response.json.return_value = [{"id": 56, "name": "TestName", "icon": "TestIcon"}, {"id": 57, "name": "TestName", "icon": "TestIcon", "details": {"infix_upgrade": {"attributes": [{"attribute": "Power","modifier": 5},{"attribute": "Precision","modifier": 3}]}}}]
+        url = 'https://mock.com/api/item?=ids1,2'
+        result = api.get_item_data(url)   
+                
+        self.assertEqual(result, {56: {'name': 'TestName', 'icon': 'TestIcon', 'attributes': []}, 57: {'name': 'TestName', 'icon': 'TestIcon', 'attributes': [{"attribute": "Power","modifier": 5},{"attribute": "Precision","modifier": 3}]}})
+        mock_get.assert_called_once_with(url)
+
+    @patch('requests.get')
+    def test_get_item_data_wrong_ids(self, mock_get: patch):
+        mock_response = mock_get.return_value  
+        mock_response.json.return_value = {"text": "all ids provided are invalid"} 
+        url = 'https://mock.com/api/item?=ids1,2'
+        result = api.get_item_data(url)  
+        
+        self.assertEqual(result, {'': {'attributes': [], 'icon': '', 'name': ''}})
+        mock_get.assert_called_once_with(url)    
 
 
-#test function get_sellable_data
-def test_get_sellable_data_wrong_url():
-    with pytest.raises(Exception) as e_info:
-        api.get_sellable_data("wrongurl")
+class TestGetSellableData(unittest.TestCase):
 
-def test_get_sellable_data_passes_one_id():
-    assert api.get_sellable_data("https://api.guildwars2.com/v2/commerce/prices/68") == {68: True}
+    def test_get_recipe_data_wrong_url(self) -> None:
+        with self.assertRaises(requests.exceptions.ConnectionError) as e_info:
+            api.get_item_data("https://wrongurl")
 
-def test_get_sellable_data_passes_one_wrong_id():
-    with pytest.raises(Exception) as e_info:
-        api.get_sellable_data("https://api.guildwars2.com/v2/commerce/prices/0")
+    @patch('requests.get')
+    def test_get_item_data_passes_one_id_with_price(self, mock_get: patch):
+        mock_response = mock_get.return_value  
+        mock_response.json.return_value = {"id": 68,"buys": {"quantity": 1,"unit_price": 75}}
+        url = 'https://mock.com/api/price/1'
+        result = api.get_sellable_data(url)  
 
-def test_get_sellable_data_passes_multiple_ids():
-    assert api.get_sellable_data("https://api.guildwars2.com/v2/commerce/prices?ids=68,69") == {68: True, 69: True}
+        self.assertEqual(result, {68: True})  
+        mock_get.assert_called_once_with(url) 
 
-def test_get_sellable_data_passes_with_one_wrong_ids():
-    assert api.get_sellable_data("https://api.guildwars2.com/v2/commerce/prices?ids=0,68") == {68: True}
+    @patch('requests.get')
+    def test_get_item_data_passes_multiple_ids(self, mock_get: patch):
+        mock_response = mock_get.return_value  
+        mock_response.json.return_value = [{"id": 68,"buys": {"quantity": 1,"unit_price": 75}}, {"id": 69,"buys": {"quantity": 1,"unit_price": 57}}]
+        url = 'https://mock.com/api/price/0'
+        result = api.get_sellable_data(url)  
 
-def test_get_sellable_data_with_only_wrong_ids():
-    assert api.get_sellable_data("https://api.guildwars2.com/v2/commerce/prices?ids=0,102938957") == {}
+        self.assertEqual(result, {68: True, 69: True})  
+        mock_get.assert_called_once_with(url) 
 
-#test function get_recipe_data
-def test_get_recipe_data_wrong_url():
-    with pytest.raises(Exception) as e_info:
-        api.get_recipe_data("wrongurl")
-
-def test_get_recipe_data_passes_one_id():
-    assert api.get_recipe_data("https://api.guildwars2.com/v2/recipes/1") == {1: {"output_item_id": 19713, "ingredients": [{"item_id": 19726,"count": 2}]}}
-
-def test_get_recipe_data_passes_one_wrong_id():
-    with pytest.raises(Exception) as e_info:
-        api.get_recipe_data("https://api.guildwars2.com/v2/recipes/0")
-
-def test_get_recipe_data_passes_multiple_ids():
-    assert api.get_recipe_data("https://api.guildwars2.com/v2/recipes?ids=1,2") == {1: {"output_item_id": 19713, "ingredients": [{"item_id": 19726,"count": 2}]}, 2: {"output_item_id": 19712, "ingredients": [{"item_id": 19725,"count": 3}]}}
-
-def test_get_recipe_data_passes_with_one_wrong_ids():
-    assert api.get_recipe_data("https://api.guildwars2.com/v2/recipes?ids=0,1") == {1: {"output_item_id": 19713, "ingredients": [{"item_id": 19726,"count": 2}]}}
-
-def test_get_recipe_data_with_only_wrong_ids():
-    with pytest.raises(Exception) as e_info:
-        api.get_recipe_data("https://api.guildwars2.com/v2/recipes?ids=0,102938957")
+if __name__ == '__main__':
+    unittest.main()
