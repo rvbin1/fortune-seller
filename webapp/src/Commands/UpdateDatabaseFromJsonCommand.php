@@ -19,9 +19,9 @@ use Symfony\Component\HttpKernel\KernelInterface;
 #[AsCommand(name: 'update:database')]
 class UpdateDatabaseFromJsonCommand extends Command
 {
-    private const ITEMS_JSON = 'items.json';
-    private const RECIPE_JSON = 'recipe.json';
-    private const MYSTICFORGE_JSON = 'mysticForge.json';
+    private const string ITEMS_JSON = 'items.json';
+    private const string RECIPE_JSON = 'recipe.json';
+    private const string MYSTICFORGE_JSON = 'mysticForge.json';
 
     public function __construct(
         private readonly EntityManagerInterface $entityManager,

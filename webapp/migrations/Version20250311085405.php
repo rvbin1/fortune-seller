@@ -10,17 +10,17 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20250305092420 extends AbstractMigration
+final class Version20250311085405 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'Migration for Database';
     }
 
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE item (id INT AUTO_INCREMENT NOT NULL, gw2_id INT NOT NULL, pic_url VARCHAR(255) DEFAULT NULL, name VARCHAR(255) NOT NULL, sellable TINYINT(1) NOT NULL, attributes JSON DEFAULT NULL COMMENT \'(DC2Type:json)\', craftable TINYINT(1) DEFAULT NULL, price DOUBLE PRECISION DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE item (id INT AUTO_INCREMENT NOT NULL, gw2_id INT NOT NULL, pic_url VARCHAR(255) DEFAULT NULL, name VARCHAR(255) NOT NULL, sellable TINYINT(1) NOT NULL, attributes JSON DEFAULT NULL COMMENT \'(DC2Type:json)\', craftable TINYINT(1) DEFAULT NULL, price DOUBLE PRECISION DEFAULT NULL, wiki_link VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE mystic_forge (id INT AUTO_INCREMENT NOT NULL, output_item_id INT NOT NULL, gw2_recipe_id INT NOT NULL, INDEX IDX_45728D46CB6DD5B8 (output_item_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE mystic_forge_ingredients (id INT AUTO_INCREMENT NOT NULL, mystic_forge_id INT DEFAULT NULL, ingredient_item_id INT DEFAULT NULL, quantity INT NOT NULL, INDEX IDX_104FDAD42270C211 (mystic_forge_id), INDEX IDX_104FDAD413585998 (ingredient_item_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE recipe_ingredients (id INT AUTO_INCREMENT NOT NULL, recipe_id INT NOT NULL, ingredient_id INT NOT NULL, quantity INT NOT NULL, INDEX IDX_9F925F2B59D8A214 (recipe_id), INDEX IDX_9F925F2B933FE08C (ingredient_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
