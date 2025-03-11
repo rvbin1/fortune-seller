@@ -22,7 +22,7 @@
                                     }) }}">
                                         {{ item.name }} ({{ item.getConvertedPrice() }})
                                     </a>
-                                    <i class="fa-solid fa-link"></i>
+                                    <a href="{{ item.getWikiUrl() }}" class="fa-solid fa-link"></a>
                                 </div>
                                 <div class="item-attributes">
                                     {% if item.getAttributeNames() is not empty %}
