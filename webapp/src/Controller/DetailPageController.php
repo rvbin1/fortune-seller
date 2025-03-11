@@ -2,6 +2,7 @@
 // src/Controller/DetailPageController.php
 namespace App\Controller;
 
+use App\Service\GetGemCourse;
 use App\Service\GetItemDataService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,7 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DetailPageController extends AbstractController
 {
-    public function __construct(private readonly GetItemDataService $gids)
+    public function __construct(private readonly GetItemDataService $gids,
+                                private readonly GetGemCourse $ggc)
     {
     }
 
@@ -21,6 +23,8 @@ class DetailPageController extends AbstractController
         $mysticForge = filter_var($request->query->get('mysticForge', false), FILTER_VALIDATE_BOOLEAN);
 
         $data = $this->gids->getItemData($id, $crafting, $mysticForge);
+
+        $data['gemCourse'] = $this->ggc->getGemCourse();
 
         return $this->render('detail_page/detail_page.html.twig', $data);
     }

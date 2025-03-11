@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\SearchFormType;
+use App\Service\GetGemCourse;
 use App\Service\ProcessSearchDataService;
 use App\Service\ShowItemsService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,10 +13,11 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class HomePageController extends AbstractController
 {
-    public function __construct(
-        private readonly ProcessSearchDataService $psd,
-        private readonly ShowItemsService $sis
-    ) {
+
+    public function __construct(private readonly ProcessSearchDataService $psd,
+                                private readonly ShowItemsService $sis,
+                                private readonly GetGemCourse $ggc)
+    {
     }
 
     #[Route('/{page<\d+>?1}', name: 'app_home_page')]
@@ -58,11 +60,12 @@ class HomePageController extends AbstractController
         }
 
         return $this->render('home_page/index.html.twig', [
-            'searchForm'  => $searchForm->createView(),
-            'items'       => $pagination['items'],
-            'totalPages'  => $pagination['totalPages'],
-            'currentPage' => $pagination['currentPage'],
-            'query'       => $query,
+            'searchForm'    => $searchForm->createView(),
+            'items'         => $pagination['items'],
+            'totalPages'    => $pagination['totalPages'],
+            'currentPage'   => $pagination['currentPage'],
+            'query'         => $query,
+            'gemCourse'     => $this->ggc->getGemCourse(),
         ]);
     }
 }
