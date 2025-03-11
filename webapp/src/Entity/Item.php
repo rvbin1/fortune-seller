@@ -71,7 +71,7 @@ class Item
     private ?float $price = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $wikiLink = null;
+    private ?string $wikiUrl = null;
 
     public function __construct()
     {
@@ -309,14 +309,14 @@ class Item
         return implode(', ', $parts);
     }
 
-    public function getWikiLink(): ?string
+    public function getWikiUrl(): ?string
     {
-        return $this->wikiLink;
+        return $this->wikiUrl;
     }
 
-    public function setWikiLink(?string $wikiLink): static
+    public function setWikiUrl(?string $wikiUrl): static
     {
-        $this->wikiLink = $wikiLink;
+        $this->wikiUrl = $wikiUrl;
 
         return $this;
     }
