@@ -7,3 +7,18 @@ body{
     height: 100vh;
     margin: 0;
 }
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #000;
+}
+
+a:hover,
+a:active {
+    color: #555;
+    text-decoration: none;
+}

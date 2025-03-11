@@ -70,6 +70,9 @@ class Item
     #[ORM\Column(nullable: true)]
     private ?float $price = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $wikiUrl = null;
+
     public function __construct()
     {
         $this->producedRecipes = new ArrayCollection();
@@ -304,5 +307,17 @@ class Item
             return 'not sellable';
         }
         return implode(', ', $parts);
+    }
+
+    public function getWikiUrl(): ?string
+    {
+        return $this->wikiUrl;
+    }
+
+    public function setWikiUrl(?string $wikiUrl): static
+    {
+        $this->wikiUrl = $wikiUrl;
+
+        return $this;
     }
 }
