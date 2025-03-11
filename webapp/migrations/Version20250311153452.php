@@ -7,14 +7,11 @@ namespace DoctrineMigrations;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\AbstractMigration;
 
-/**
- * Auto-generated Migration: Please modify to your needs!
- */
 final class Version20250311153452 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'Get the whole Database schema';
     }
 
     public function up(Schema $schema): void

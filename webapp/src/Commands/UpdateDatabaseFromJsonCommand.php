@@ -56,9 +56,6 @@ class UpdateDatabaseFromJsonCommand extends Command
         return Command::SUCCESS;
     }
 
-    /**
-     * Liest die Items aus der JSON-Datei und aktualisiert bzw. fügt sie ein.
-     */
     private function processItems(OutputInterface $output): void
     {
         $output->writeln('Lese Item-Daten aus der JSON-Datei...');
@@ -265,10 +262,6 @@ class UpdateDatabaseFromJsonCommand extends Command
         $this->entityManager->flush();
     }
 
-    /**
-     * Aktualisiert für alle Items das craftable-Flag basierend auf regulären Recipes.
-     * MysticForge-Rezepte werden hierbei nicht berücksichtigt.
-     */
     private function updateCraftableFlags(OutputInterface $output): void
     {
         $output->writeln('Aktualisiere craftable-Flags...');

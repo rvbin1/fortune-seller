@@ -10,7 +10,7 @@
                         <div class="item">
                             {% if item.getPicUrl() is not empty %}
                                 <div class="icon">
-                                    <img src="{{ item.getPicUrl() }}" alt="{{ item.name }} Icon" class="item-icon">
+                                    <img src="{{ item.getPicUrl() }}" alt="{{ item.getName() }} Icon" class="item-icon">
                                 </div>
                             {% endif %}
                             <div class="item-details">
@@ -20,7 +20,7 @@
                                         'crafting': app.request.get('crafting'),
                                         'mysticForge': app.request.get('mysticForge')
                                     }) }}">
-                                        {{ item.name }} ({{ item.getConvertedPrice() }})
+                                        {{ item.getName() }} ({{ item.getConvertedPrice() }})
                                     </a>
                                     <a href="{{ item.getWikiUrl() }}" class="fa-solid fa-link"></a>
                                 </div>
@@ -35,7 +35,7 @@
                 </div>
                 {{ include('includes/pagination.html.twig') }}
             {% else %}
-                <p class="no-items">Keine Items gefunden.</p>
+                <p class="no-items">No Items found.</p>
             {% endif %}
         </div>
     {% endblock %}
