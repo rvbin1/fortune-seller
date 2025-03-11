@@ -11,13 +11,18 @@ class GetItemDataService
     {
     }
 
+    /**
+     * Gets detailed data for a specific item.
+     *
+     * @param int $id
+     * @param bool|null $craftingBool
+     * @param bool|null $mysticForgeBool
+     * @return array{item: Item, usedRecipes: array<int, mixed>, usedMysticRecipes: array<int, mixed>, crafting: bool|null, mysticForge: bool|null}
+     */
     public function getItemData(int $id, ?bool $craftingBool, ?bool $mysticForgeBool): array
     {
         /** @var Item $item */
         $item = $this->em->getRepository(Item::class)->find($id);
-        if (!$item) {
-            return ['error' => 'Item not found'];
-        }
 
         $usedRecipes = [];
         foreach ($item->getUsedInRecipeIngredients() as $recipeIngredient) {
@@ -27,7 +32,7 @@ class GetItemDataService
             }
         }
         $usedRecipes = array_values($usedRecipes);
-        usort($usedRecipes, fn($a, $b) => $b->getOutputItem()->getPrice() <=> $a->getOutputItem()->getPrice());
+        usort($usedRecipes, fn($a, $b) => $b->getOutputItem()?->getPrice() <=> $a->getOutputItem()?->getPrice());
 
         $usedMysticRecipes = [];
         foreach ($item->getUsedInMysticForgeIngredients() as $usedIngredient) {
@@ -37,15 +42,14 @@ class GetItemDataService
             }
         }
         $usedMysticRecipes = array_values($usedMysticRecipes);
-        usort($usedMysticRecipes, fn($a, $b) => $b->getOutputItem()->getPrice() <=> $a->getOutputItem()->getPrice());
+        usort($usedMysticRecipes, fn($a, $b) => $b->getOutputItem()?->getPrice() <=> $a->getOutputItem()?->getPrice());
 
-        $result = ['item' => $item];
-
-        $result['usedRecipes'] = $usedRecipes;
-        $result['usedMysticRecipes'] = $usedMysticRecipes;
-        $result['crafting'] = $craftingBool;
-        $result['mysticForge'] = $mysticForgeBool;
-
-        return $result;
+        return [
+            'item' => $item,
+            'usedRecipes' => $usedRecipes,
+            'usedMysticRecipes' => $usedMysticRecipes,
+            'crafting' => $craftingBool,
+            'mysticForge' => $mysticForgeBool,
+        ];
     }
 }

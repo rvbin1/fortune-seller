@@ -13,6 +13,7 @@ class Recipes
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    // @phpstan-ignore-next-line
     private ?int $id = null;
 
     #[ORM\ManyToOne(targetEntity: Item::class, inversedBy: 'producedRecipes')]

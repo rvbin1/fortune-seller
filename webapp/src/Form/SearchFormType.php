@@ -29,7 +29,7 @@ class SearchFormType extends AbstractType
                 ],
             ])
             ->add('crafting', CheckboxType::class, [
-                'label' => "Crafting",
+                'label' => 'Crafting',
                 'required' => false,
             ])
             ->add('mysticForge', CheckboxType::class, [

@@ -25,10 +25,11 @@ class UpdateDatabaseFromJsonCommand extends Command
 
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly Filesystem $filesystem,
-        private readonly SerializerInterface $serializer,
-        private readonly KernelInterface $kernel
-    ) {
+        private readonly Filesystem             $filesystem,
+        private readonly SerializerInterface    $serializer,
+        private readonly KernelInterface        $kernel
+    )
+    {
         parent::__construct();
     }
 
@@ -41,8 +42,9 @@ class UpdateDatabaseFromJsonCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        // Arrays zur Vermeidung mehrfacher Fehlermeldungen
+        /** @var int[] $missingItemsReported */
         $missingItemsReported = [];
+        /** @var int[] $missingIngredientsReported */
         $missingIngredientsReported = [];
 
         $this->processItems($output);
@@ -80,18 +82,14 @@ class UpdateDatabaseFromJsonCommand extends Command
 
         $output->writeln('Verarbeite Items...');
         foreach ($itemsFromJson as $newItem) {
-            // Annahme: gw2Id identifiziert Items eindeutig
             $existingItem = $this->entityManager->getRepository(Item::class)
                 ->findOneBy(['gw2Id' => $newItem->getGw2Id()]);
             if ($existingItem) {
                 if ($this->hasItemChanged($existingItem, $newItem)) {
-                    // updateFrom() muss in der Item-Entity implementiert werden!
-                    $existingItem->updateFrom($newItem);
                     $this->entityManager->persist($existingItem);
                     $output->writeln(sprintf('Aktualisiere Item %s (gw2Id: %d).', $newItem->getName(), $newItem->getGw2Id()));
                 }
             } else {
-                // Neues Item – initial craftable auf false setzen
                 $newItem->setCraftable(false);
                 $this->entityManager->persist($newItem);
                 $output->writeln(sprintf('Füge neues Item %s (gw2Id: %d) hinzu.', $newItem->getName(), $newItem->getGw2Id()));
@@ -101,7 +99,9 @@ class UpdateDatabaseFromJsonCommand extends Command
     }
 
     /**
-     * Liest Rezepte aus der JSON-Datei und verarbeitet diese.
+     * @param OutputInterface $output
+     * @param int[]           &$missingItemsReported
+     * @param int[]           &$missingIngredientsReported
      */
     private function processRecipes(OutputInterface $output, array &$missingItemsReported, array &$missingIngredientsReported): void
     {
@@ -116,13 +116,14 @@ class UpdateDatabaseFromJsonCommand extends Command
             $output->writeln(sprintf('<error>Fehler beim Auslesen der Datei %s.</error>', $recipeFilePath));
             return;
         }
-        try {
-            $recipesData = $this->serializer->decode($jsonContent, 'json');
-        } catch (\Exception $e) {
-            $output->writeln('<error>Fehler beim Dekodieren der JSON-Daten (Recipes): ' . $e->getMessage() . '</error>');
+        $recipesData = json_decode($jsonContent, true);
+        if ($recipesData === null) {
+            $output->writeln('<error>Fehler beim Dekodieren der JSON-Daten (Recipes).</error>');
             return;
         }
-
+        /**
+         * @var array<int, array{output_item_id: int, gw2_id: int, ingredients?: array<int, array{item_id: int, count: int}>}> $recipesData
+         */
         $output->writeln('Verarbeite Rezepte...');
         foreach ($recipesData as $recipeData) {
             $outputItem = $this->entityManager->getRepository(Item::class)
@@ -130,8 +131,8 @@ class UpdateDatabaseFromJsonCommand extends Command
             if (!$outputItem) {
                 if (!in_array($recipeData['output_item_id'], $missingItemsReported, true)) {
                     $output->writeln(sprintf(
-                        '<error>Item mit gw2Id %s nicht gefunden. Überspringe Rezept.</error>',
-                        $recipeData['output_item_id']
+                        '<error>Item mit gw2Id %d nicht gefunden. Überspringe Rezept.</error>',
+                        (int)$recipeData['output_item_id']
                     ));
                     $missingItemsReported[] = $recipeData['output_item_id'];
                 }
@@ -143,24 +144,25 @@ class UpdateDatabaseFromJsonCommand extends Command
             if ($existingRecipe) {
                 if ($this->hasRecipeChanged($existingRecipe, $recipeData)) {
                     $this->updateRecipeFrom($existingRecipe, $recipeData, $output, $missingIngredientsReported);
-                    $output->writeln(sprintf('Aktualisiere Rezept mit gw2_id %s.', $recipeData['gw2_id']));
+                    $output->writeln(sprintf('Aktualisiere Rezept mit gw2_id %d.', (int)$recipeData['gw2_id']));
                 }
             } else {
                 $recipe = new Recipes();
                 $recipe->setGw2RecipeId($recipeData['gw2_id']);
                 $recipe->setOutputItem($outputItem);
                 $outputItem->addProducedRecipe($recipe);
-                // Hier wird craftable gesetzt, weil es sich um ein reguläres Recipe handelt.
                 $outputItem->setCraftable(true);
-                if (isset($recipeData['ingredients']) && is_array($recipeData['ingredients'])) {
-                    foreach ($recipeData['ingredients'] as $ingredientData) {
+                if (isset($recipeData['ingredients'])) {
+                    /** @var array<int, array{item_id: int, count: int}> $recipeDataIngredients */
+                    $recipeDataIngredients = $recipeData['ingredients'];
+                    foreach ($recipeDataIngredients as $ingredientData) {
                         $ingredient = $this->entityManager->getRepository(Item::class)
                             ->findOneBy(['gw2Id' => $ingredientData['item_id']]);
                         if (!$ingredient) {
                             if (!in_array($ingredientData['item_id'], $missingIngredientsReported, true)) {
                                 $output->writeln(sprintf(
-                                    '<error>Ingredient mit gw2Id %s nicht gefunden. Überspringe diese Zutat.</error>',
-                                    $ingredientData['item_id']
+                                    '<error>Ingredient mit gw2Id %d nicht gefunden. Überspringe diese Zutat.</error>',
+                                    (int)$ingredientData['item_id']
                                 ));
                                 $missingIngredientsReported[] = $ingredientData['item_id'];
                             }
@@ -168,7 +170,7 @@ class UpdateDatabaseFromJsonCommand extends Command
                         }
                         $recipeIngredient = new RecipeIngredients();
                         $recipeIngredient->setIngredient($ingredient);
-                        $recipeIngredient->setQuantity($ingredientData['count']);
+                        $recipeIngredient->setQuantity((int)$ingredientData['count']);
                         $recipe->addIngredient($recipeIngredient);
                         $this->entityManager->persist($recipeIngredient);
                     }
@@ -181,6 +183,10 @@ class UpdateDatabaseFromJsonCommand extends Command
 
     /**
      * Liest MysticForge-Daten aus der JSON-Datei und verarbeitet diese.
+     *
+     * @param OutputInterface $output
+     * @param int[]           &$missingItemsReported
+     * @param int[]           &$missingIngredientsReported
      */
     private function processMysticForge(OutputInterface $output, array &$missingItemsReported, array &$missingIngredientsReported): void
     {
@@ -195,13 +201,14 @@ class UpdateDatabaseFromJsonCommand extends Command
             $output->writeln(sprintf('<error>Fehler beim Auslesen der Datei %s.</error>', $mysticFilePath));
             return;
         }
-        try {
-            $mysticData = $this->serializer->decode($jsonContent, 'json');
-        } catch (\Exception $e) {
-            $output->writeln('<error>Fehler beim Dekodieren der JSON-Daten (MysticForge): ' . $e->getMessage() . '</error>');
+        $mysticData = json_decode($jsonContent, true);
+        if ($mysticData === null) {
+            $output->writeln('<error>Fehler beim Dekodieren der JSON-Daten (MysticForge).</error>');
             return;
         }
-
+        /**
+         * @var array<int, array{output_item_id: int, gw2_id: int, ingredients?: array<int, array{item_id: int, count: int}>}> $mysticData
+         */
         $output->writeln('Verarbeite MysticForge-Rezepte...');
         foreach ($mysticData as $mysticForgeData) {
             $outputItem = $this->entityManager->getRepository(Item::class)
@@ -209,8 +216,8 @@ class UpdateDatabaseFromJsonCommand extends Command
             if (!$outputItem) {
                 if (!in_array($mysticForgeData['output_item_id'], $missingItemsReported, true)) {
                     $output->writeln(sprintf(
-                        '<error>Item mit gw2Id %s nicht gefunden. Überspringe MysticForge-Rezept.</error>',
-                        $mysticForgeData['output_item_id']
+                        '<error>Item mit gw2Id %d nicht gefunden. Überspringe MysticForge-Rezept.</error>',
+                        (int)$mysticForgeData['output_item_id']
                     ));
                     $missingItemsReported[] = $mysticForgeData['output_item_id'];
                 }
@@ -222,23 +229,24 @@ class UpdateDatabaseFromJsonCommand extends Command
             if ($existingMystic) {
                 if ($this->hasMysticForgeChanged($existingMystic, $mysticForgeData)) {
                     $this->updateMysticForgeFrom($existingMystic, $mysticForgeData, $output, $missingIngredientsReported);
-                    $output->writeln(sprintf('Aktualisiere MysticForge-Rezept mit gw2_id %s.', $mysticForgeData['gw2_id']));
+                    $output->writeln(sprintf('Aktualisiere MysticForge-Rezept mit gw2_id %d.', (int)$mysticForgeData['gw2_id']));
                 }
             } else {
                 $mysticForge = new MysticForge();
                 $mysticForge->setGw2RecipeId($mysticForgeData['gw2_id']);
                 $mysticForge->setOutputItem($outputItem);
                 $outputItem->addProducedMysticForge($mysticForge);
-                // Kein Aufruf von setCraftable(true) hier – MysticForge soll das craftable-Flag nicht beeinflussen.
-                if (isset($mysticForgeData['ingredients']) && is_array($mysticForgeData['ingredients'])) {
-                    foreach ($mysticForgeData['ingredients'] as $ingredientData) {
+                if (isset($mysticForgeData['ingredients'])) {
+                    /** @var array<int, array{item_id: int, count: int}> $mysticForgeIngredientsData */
+                    $mysticForgeIngredientsData = $mysticForgeData['ingredients'];
+                    foreach ($mysticForgeIngredientsData as $ingredientData) {
                         $ingredient = $this->entityManager->getRepository(Item::class)
                             ->findOneBy(['gw2Id' => $ingredientData['item_id']]);
                         if (!$ingredient) {
                             if (!in_array($ingredientData['item_id'], $missingIngredientsReported, true)) {
                                 $output->writeln(sprintf(
-                                    '<error>Ingredient mit gw2Id %s nicht gefunden. Überspringe diese Zutat.</error>',
-                                    $ingredientData['item_id']
+                                    '<error>Ingredient mit gw2Id %d nicht gefunden. Überspringe diese Zutat.</error>',
+                                    (int)$ingredientData['item_id']
                                 ));
                                 $missingIngredientsReported[] = $ingredientData['item_id'];
                             }
@@ -246,7 +254,7 @@ class UpdateDatabaseFromJsonCommand extends Command
                         }
                         $mysticForgeIngredient = new MysticForgeIngredients();
                         $mysticForgeIngredient->setIngredientItem($ingredient);
-                        $mysticForgeIngredient->setQuantity($ingredientData['count']);
+                        $mysticForgeIngredient->setQuantity((int)$ingredientData['count']);
                         $mysticForge->addIngredient($mysticForgeIngredient);
                         $this->entityManager->persist($mysticForgeIngredient);
                     }
@@ -266,7 +274,6 @@ class UpdateDatabaseFromJsonCommand extends Command
         $output->writeln('Aktualisiere craftable-Flags...');
         $allItems = $this->entityManager->getRepository(Item::class)->findAll();
         foreach ($allItems as $item) {
-            // Nur reguläre Recipes entscheiden über craftable.
             if ($item->getProducedRecipes()->isEmpty() && $item->isCraftable()) {
                 $item->setCraftable(false);
                 $this->entityManager->persist($item);
@@ -275,10 +282,6 @@ class UpdateDatabaseFromJsonCommand extends Command
         }
         $this->entityManager->flush();
     }
-
-    // ------------------------------
-    // Vergleichs- und Update-Methoden
-    // ------------------------------
 
     private function hasItemChanged(Item $existing, Item $new): bool
     {
@@ -297,14 +300,17 @@ class UpdateDatabaseFromJsonCommand extends Command
         return false;
     }
 
+    /**
+     * @param array{output_item_id: int, gw2_id: int, ingredients?: array<int, array{item_id: int, count: int}>} $recipeData
+     */
     private function hasRecipeChanged(Recipes $existing, array $recipeData): bool
     {
-        if ($existing->getOutputItem()->getGw2Id() !== $recipeData['output_item_id']) {
+        if (($existing->getOutputItem()?->getGw2Id() ?? 0) !== $recipeData['output_item_id']) {
             return true;
         }
         $existingIngredients = [];
         foreach ($existing->getIngredients() as $ingredient) {
-            $existingIngredients[$ingredient->getIngredient()->getGw2Id()] = $ingredient->getQuantity();
+            $existingIngredients[$ingredient->getIngredient()?->getGw2Id()] = $ingredient->getQuantity();
         }
         $jsonIngredients = $recipeData['ingredients'] ?? [];
         if (count($existingIngredients) !== count($jsonIngredients)) {
@@ -320,48 +326,56 @@ class UpdateDatabaseFromJsonCommand extends Command
         return false;
     }
 
+    /**
+     * @param array{output_item_id: int, gw2_id: int, ingredients?: array<int, array{item_id: int, count: int}>} $recipeData
+     * @param int[]                                                                          &$missingIngredientsReported
+     */
     private function updateRecipeFrom(Recipes $existing, array $recipeData, OutputInterface $output, array &$missingIngredientsReported): void
     {
         $outputItem = $this->entityManager->getRepository(Item::class)
             ->findOneBy(['gw2Id' => $recipeData['output_item_id']]);
-        if ($outputItem && $existing->getOutputItem()->getGw2Id() !== $outputItem->getGw2Id()) {
+        if ($outputItem && ($existing->getOutputItem()?->getGw2Id() ?? 0) !== $outputItem->getGw2Id()) {
             $existing->setOutputItem($outputItem);
             $outputItem->addProducedRecipe($existing);
             $outputItem->setCraftable(true);
         }
-        // Entferne alte Zutaten
         foreach ($existing->getIngredients() as $oldIngredient) {
             $existing->removeIngredient($oldIngredient);
         }
-        foreach ($recipeData['ingredients'] as $ingredientData) {
-            $ingredient = $this->entityManager->getRepository(Item::class)
-                ->findOneBy(['gw2Id' => $ingredientData['item_id']]);
-            if (!$ingredient) {
-                if (!in_array($ingredientData['item_id'], $missingIngredientsReported, true)) {
-                    $output->writeln(sprintf(
-                        '<error>Ingredient mit gw2Id %s nicht gefunden. Überspringe diese Zutat.</error>',
-                        $ingredientData['item_id']
-                    ));
-                    $missingIngredientsReported[] = $ingredientData['item_id'];
+        if (isset($recipeData['ingredients'])) {
+            foreach ($recipeData['ingredients'] as $ingredientData) {
+                $ingredient = $this->entityManager->getRepository(Item::class)
+                    ->findOneBy(['gw2Id' => $ingredientData['item_id']]);
+                if (!$ingredient) {
+                    if (!in_array($ingredientData['item_id'], $missingIngredientsReported, true)) {
+                        $output->writeln(sprintf(
+                            '<error>Ingredient mit gw2Id %d nicht gefunden. Überspringe diese Zutat.</error>',
+                            (int)$ingredientData['item_id']
+                        ));
+                        $missingIngredientsReported[] = $ingredientData['item_id'];
+                    }
+                    continue;
                 }
-                continue;
+                $recipeIngredient = new RecipeIngredients();
+                $recipeIngredient->setIngredient($ingredient);
+                $recipeIngredient->setQuantity((int)$ingredientData['count']);
+                $existing->addIngredient($recipeIngredient);
+                $this->entityManager->persist($recipeIngredient);
             }
-            $recipeIngredient = new RecipeIngredients();
-            $recipeIngredient->setIngredient($ingredient);
-            $recipeIngredient->setQuantity($ingredientData['count']);
-            $existing->addIngredient($recipeIngredient);
-            $this->entityManager->persist($recipeIngredient);
         }
     }
 
+    /**
+     * @param array{output_item_id: int, gw2_id: int, ingredients?: array<int, array{item_id: int, count: int}>} $mysticData
+     */
     private function hasMysticForgeChanged(MysticForge $existing, array $mysticData): bool
     {
-        if ($existing->getOutputItem()->getGw2Id() !== $mysticData['output_item_id']) {
+        if (($existing->getOutputItem()?->getGw2Id() ?? 0) !== $mysticData['output_item_id']) {
             return true;
         }
         $existingIngredients = [];
         foreach ($existing->getIngredients() as $ingredient) {
-            $existingIngredients[$ingredient->getIngredientItem()->getGw2Id()] = $ingredient->getQuantity();
+            $existingIngredients[$ingredient->getIngredientItem()?->getGw2Id()] = $ingredient->getQuantity();
         }
         $jsonIngredients = $mysticData['ingredients'] ?? [];
         if (count($existingIngredients) !== count($jsonIngredients)) {
@@ -377,37 +391,41 @@ class UpdateDatabaseFromJsonCommand extends Command
         return false;
     }
 
+    /**
+     * @param array{output_item_id: int, gw2_id: int, ingredients?: array<int, array{item_id: int, count: int}>} $mysticData
+     * @param int[]                                                                          &$missingIngredientsReported
+     */
     private function updateMysticForgeFrom(MysticForge $existing, array $mysticData, OutputInterface $output, array &$missingIngredientsReported): void
     {
         $outputItem = $this->entityManager->getRepository(Item::class)
             ->findOneBy(['gw2Id' => $mysticData['output_item_id']]);
-        if ($outputItem && $existing->getOutputItem()->getGw2Id() !== $outputItem->getGw2Id()) {
+        if ($outputItem && ($existing->getOutputItem()?->getGw2Id() ?? 0) !== $outputItem->getGw2Id()) {
             $existing->setOutputItem($outputItem);
             $outputItem->addProducedMysticForge($existing);
-            // Hier wird bewusst kein craftable-Flag gesetzt.
         }
-        // Entferne alte Zutaten
         foreach ($existing->getIngredients() as $oldIngredient) {
             $existing->removeIngredient($oldIngredient);
         }
-        foreach ($mysticData['ingredients'] as $ingredientData) {
-            $ingredient = $this->entityManager->getRepository(Item::class)
-                ->findOneBy(['gw2Id' => $ingredientData['item_id']]);
-            if (!$ingredient) {
-                if (!in_array($ingredientData['item_id'], $missingIngredientsReported, true)) {
-                    $output->writeln(sprintf(
-                        '<error>Ingredient mit gw2Id %s nicht gefunden. Überspringe diese Zutat.</error>',
-                        $ingredientData['item_id']
-                    ));
-                    $missingIngredientsReported[] = $ingredientData['item_id'];
+        if (isset($mysticData['ingredients'])) {
+            foreach ($mysticData['ingredients'] as $ingredientData) {
+                $ingredient = $this->entityManager->getRepository(Item::class)
+                    ->findOneBy(['gw2Id' => $ingredientData['item_id']]);
+                if (!$ingredient) {
+                    if (!in_array($ingredientData['item_id'], $missingIngredientsReported, true)) {
+                        $output->writeln(sprintf(
+                            '<error>Ingredient mit gw2Id %d nicht gefunden. Überspringe diese Zutat.</error>',
+                            (int)$ingredientData['item_id']
+                        ));
+                        $missingIngredientsReported[] = $ingredientData['item_id'];
+                    }
+                    continue;
                 }
-                continue;
+                $mysticForgeIngredient = new MysticForgeIngredients();
+                $mysticForgeIngredient->setIngredientItem($ingredient);
+                $mysticForgeIngredient->setQuantity((int)$ingredientData['count']);
+                $existing->addIngredient($mysticForgeIngredient);
+                $this->entityManager->persist($mysticForgeIngredient);
             }
-            $mysticForgeIngredient = new MysticForgeIngredients();
-            $mysticForgeIngredient->setIngredientItem($ingredient);
-            $mysticForgeIngredient->setQuantity($ingredientData['count']);
-            $existing->addIngredient($mysticForgeIngredient);
-            $this->entityManager->persist($mysticForgeIngredient);
         }
     }
 }

@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-final class HomePageController extends AbstractController
+class HomePageController extends AbstractController
 {
 
     public function __construct(private readonly ProcessSearchDataService $psd,
@@ -37,17 +37,23 @@ final class HomePageController extends AbstractController
         $searchForm->handleRequest($request);
 
         if ($searchForm->isSubmitted() && $searchForm->isValid()) {
+            /** @var array{query: string|null, crafting: bool, mysticForge: bool} $searchFormData */
             $searchFormData = $searchForm->getData();
             return $this->redirectToRoute('app_home_page', [
-                'page'  => 1,
-                'query' => $searchFormData['query'],
-                'crafting' => $searchFormData['crafting'],
+                'page'        => 1,
+                'query'       => $searchFormData['query'],
+                'crafting'    => $searchFormData['crafting'],
                 'mysticForge' => $searchFormData['mysticForge'],
             ]);
         }
 
         if ($query || $crafting || $mysticForge) {
-            $searchData = array('query' => $query, 'crafting' => $crafting, 'mysticForge' => $mysticForge);
+            $searchData = [
+                'query' => $query,
+                'crafting' => $crafting,
+                'mysticForge' => $mysticForge
+            ];
+            // @phpstan-ignore-next-line
             $pagination = $this->psd->processData($page, $searchData);
         } else {
             $pagination = $this->sis->showItemsPaginated($page);
