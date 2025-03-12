@@ -16,7 +16,8 @@ class GetGemCourse
         $content = $response->getContent();
 
         $results = json_decode($content, true);
-
-        return $results["quantity"] ?? 0;
+        if (!is_array($results)) return 0;
+        if (!array_key_exists('quantity', $results)) return 0;
+        return (int)$results["quantity"];
     }
 }
